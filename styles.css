@@ -1,0 +1,1609 @@
+/* ==========================================================================
+   STYLE ÉLÉGANT & ROMANTIQUE — INVITATION RENDEZ-VOUS
+   Inspiré de l'excellence UI/UX moderne, chic, raffiné et séduisant
+   ========================================================================== */
+
+:root {
+  /* Palette Romantique & Chic */
+  --rose-primary: #E11D48;
+  --rose-deep: #BE123C;
+  --rose-velvet: #881337;
+  --rose-soft: #FFF1F2;
+  --rose-subtle: #FFE4E6;
+  --rose-border: rgba(225, 29, 72, 0.18);
+  --rose-glow: rgba(225, 29, 72, 0.28);
+
+  --gold-accent: #D97706;
+  --gold-light: #FDE68A;
+  --gold-gradient: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+
+  --cream-white: #FFFDF9;
+  --cream-card: rgba(255, 255, 255, 0.88);
+  --bg-gradient: radial-gradient(circle at 50% 20%, #FFF5F6 0%, #FDF2F4 50%, #FAF0EE 100%);
+
+  --text-dark: #1E1217;
+  --text-muted: #5E4652;
+  --text-light: #8E717F;
+
+  --shadow-sm: 0 4px 12px rgba(190, 18, 60, 0.06);
+  --shadow-md: 0 12px 28px -6px rgba(190, 18, 60, 0.12);
+  --shadow-lg: 0 24px 50px -10px rgba(190, 18, 60, 0.18);
+  --shadow-glow: 0 0 25px rgba(225, 29, 72, 0.35);
+
+  --radius-xl: 28px;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-pill: 9999px;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-cursive: 'Caveat', cursive, sans-serif;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-gradient);
+  color: var(--text-dark);
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  line-height: 1.5;
+}
+
+/* Background Hearts Canvas */
+#ambient-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glowing background ambient orbs */
+.ambient-glow {
+  position: fixed;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+  animation: floatOrb 12s ease-in-out infinite alternate;
+}
+
+.glow-top-left {
+  top: -100px;
+  left: -80px;
+  background: radial-gradient(circle, rgba(254, 205, 211, 0.7) 0%, rgba(253, 164, 175, 0.3) 70%, transparent 100%);
+}
+
+.glow-bottom-right {
+  bottom: -100px;
+  right: -80px;
+  background: radial-gradient(circle, rgba(253, 230, 138, 0.4) 0%, rgba(244, 114, 182, 0.3) 70%, transparent 100%);
+  animation-duration: 16s;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, 40px) scale(1.1); }
+  100% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+/* Main Container */
+.app-container {
+  width: 100%;
+  max-width: 680px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: 16px 20px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
+}
+
+/* Top Navigation Bar */
+.top-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 0 16px 0;
+  gap: 12px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-cursive);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--rose-deep);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.nav-brand-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--rose-soft);
+  color: var(--rose-primary);
+  border-radius: 50%;
+  border: 1px solid var(--rose-border);
+  box-shadow: var(--shadow-sm);
+  animation: pulseBeat 2s infinite ease-in-out;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-btn {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--rose-border);
+  color: var(--text-muted);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(8px);
+}
+
+.icon-btn:hover {
+  background: #FFFFFF;
+  color: var(--rose-primary);
+  transform: translateY(-2px);
+  border-color: var(--rose-primary);
+  box-shadow: var(--shadow-md);
+}
+
+/* Progress Tracker */
+.progress-container {
+  width: 100%;
+  margin-bottom: 24px;
+  display: none; /* Visible after step 1 */
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.progress-header .step-badge {
+  background: var(--rose-soft);
+  color: var(--rose-deep);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  border: 1px solid var(--rose-border);
+}
+
+.progress-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(225, 29, 72, 0.1);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 16%;
+  background: linear-gradient(90deg, #F43F5E 0%, #E11D48 70%, #BE123C 100%);
+  border-radius: var(--radius-pill);
+  transition: width 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 10px rgba(225, 29, 72, 0.4);
+}
+
+/* Step Wizard Cards */
+.wizard-step {
+  display: none;
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  width: 100%;
+}
+
+.wizard-step.active {
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Main Luxury Card Frame */
+.luxury-card {
+  background: var(--cream-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  outline: 1px solid var(--rose-border);
+  border-radius: var(--radius-xl);
+  padding: 36px 30px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.luxury-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #F472B6, #FB7185, #E11D48, #D97706);
+}
+
+/* Card Headers & Typography */
+.badge-pill {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFF1F2;
+  color: var(--rose-deep);
+  border: 1px solid var(--rose-border);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow-sm);
+}
+
+.step-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.step-subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 28px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.romantic-quote {
+  font-family: var(--font-cursive);
+  font-size: 1.45rem;
+  color: var(--rose-deep);
+  text-align: center;
+  line-height: 1.35;
+  margin: 16px 0;
+}
+
+/* ==========================================================================
+   ÉTAPE 1 : PREMIER CONTACT & PRÉNOM
+   ========================================================================== */
+.hero-envelope {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 20px auto;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFF1F2 0%, #FFE4E6 100%);
+  border: 2px dashed rgba(225, 29, 72, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  box-shadow: var(--shadow-md);
+  animation: floatEnvelope 4s ease-in-out infinite;
+}
+
+@keyframes floatEnvelope {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.input-label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.custom-input {
+  width: 100%;
+  padding: 16px 20px;
+  font-size: 1.05rem;
+  font-family: var(--font-sans);
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: var(--radius-md);
+  color: var(--text-dark);
+  transition: all 0.25s ease;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
+  -webkit-appearance: none;
+}
+
+input[type="date"].custom-input {
+  min-height: 52px;
+  cursor: pointer;
+}
+
+.custom-input:focus {
+  outline: none;
+  border-color: var(--rose-primary);
+  box-shadow: 0 0 0 4px var(--rose-subtle), inset 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.custom-input::placeholder {
+  color: #A0AEC0;
+}
+
+/* Boutons Romantiques Principaux */
+.btn-primary {
+  width: 100%;
+  padding: 16px 28px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #F43F5E 0%, #E11D48 60%, #BE123C 100%);
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 10px 25px -4px rgba(225, 29, 72, 0.4);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 14px 30px -4px rgba(225, 29, 72, 0.5);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(1px) scale(0.99);
+}
+
+.btn-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  filter: grayscale(0.4);
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* ==========================================================================
+   ÉTAPE 2 : LA QUESTION CRUCIALE + BOUTON FUGITIF "NON"
+   ========================================================================== */
+.question-avatar-wrap {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px auto;
+}
+
+.question-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFE4E6 0%, #FECDD3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  box-shadow: var(--shadow-md);
+  border: 3px solid #FFFFFF;
+}
+
+.floating-heart-bubble {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--rose-primary);
+  color: #FFFFFF;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  box-shadow: var(--shadow-sm);
+  animation: pulseBeat 1.8s infinite;
+}
+
+@keyframes pulseBeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.arena-actions {
+  position: relative;
+  min-height: 140px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.btn-yes {
+  padding: 18px 36px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 25px -4px rgba(16, 185, 129, 0.45);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 5;
+  animation: pulseGlowGreen 2.5s infinite;
+}
+
+@keyframes pulseGlowGreen {
+  0%, 100% { box-shadow: 0 10px 25px -4px rgba(16, 185, 129, 0.45); }
+  50% { box-shadow: 0 14px 35px -2px rgba(16, 185, 129, 0.7); }
+}
+
+.btn-yes:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: linear-gradient(135deg, #34D399 0%, #059669 100%);
+}
+
+.btn-no {
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #64748B;
+  background: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+  user-select: none;
+  touch-action: none;
+  z-index: 10;
+}
+
+.btn-no:hover {
+  background: #E2E8F0;
+}
+
+/* Playful toast hint when Non runs away */
+.escape-toast {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(30, 18, 23, 0.92);
+  color: #FFFFFF;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 0.84rem;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  backdrop-filter: blur(6px);
+  z-index: 20;
+}
+
+.escape-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Celebration Overlay Modal */
+.celebration-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.celebration-overlay.show {
+  display: flex;
+  animation: fadeIn 0.3s ease;
+}
+
+.celebration-modal {
+  background: #FFFFFF;
+  border-radius: var(--radius-xl);
+  padding: 40px 32px;
+  text-align: center;
+  max-width: 440px;
+  width: 100%;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  animation: popScale 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 2px solid var(--rose-subtle);
+}
+
+.celebration-emoji {
+  font-size: 4rem;
+  margin-bottom: 16px;
+  display: inline-block;
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes popScale {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ==========================================================================
+   ÉTAPES 3 & 4 : GRILLES DE CARTES (LIEUX & NOURRITURE)
+   ========================================================================== */
+.selection-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.choice-card {
+  position: relative;
+  background: #FFFFFF;
+  border: 1.5px solid #F1E5E9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  user-select: none;
+}
+
+.choice-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(225, 29, 72, 0.4);
+  box-shadow: var(--shadow-md);
+}
+
+.choice-card.selected {
+  border-color: var(--rose-primary);
+  background: #FFF7F8;
+  box-shadow: 0 8px 24px -2px rgba(225, 29, 72, 0.25);
+}
+
+.choice-card-img-wrap {
+  width: 100%;
+  height: 120px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #FFE4E6 0%, #FECDD3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.choice-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.choice-card:hover .choice-card-img {
+  transform: scale(1.08);
+}
+
+.choice-card-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(4px);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--rose-deep);
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.choice-card-check {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 26px;
+  height: 26px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1.5px solid #CBD5E1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: transparent;
+  transition: all 0.25s ease;
+}
+
+.choice-card.selected .choice-card-check {
+  background: var(--rose-primary);
+  border-color: var(--rose-primary);
+  color: #FFFFFF;
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(225, 29, 72, 0.4);
+}
+
+.choice-card-body {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.choice-card-title {
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.choice-card-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+/* Custom Location / Custom Food Collapsible Input */
+.custom-input-box {
+  background: #FFF5F7;
+  border: 1px dashed var(--rose-primary);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-bottom: 22px;
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.custom-input-box.show {
+  display: block;
+}
+
+/* Humor note banner */
+.humor-note {
+  background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+  border: 1px solid #F59E0B;
+  color: #92400E;
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  font-size: 0.84rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   ÉTAPE 5 : LES PETITS PLUS & DÉTAILS
+   ========================================================================== */
+.extras-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 26px;
+}
+
+.extra-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #FFFFFF;
+  border: 1.5px solid #F1E5E9;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.extra-item:hover {
+  border-color: rgba(225, 29, 72, 0.4);
+  transform: translateX(3px);
+}
+
+.extra-item.selected {
+  background: #FFF5F7;
+  border-color: var(--rose-primary);
+  box-shadow: 0 4px 14px -2px rgba(225, 29, 72, 0.15);
+}
+
+.extra-item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.extra-icon {
+  font-size: 1.35rem;
+}
+
+.extra-label {
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.extra-checkbox {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 1.5px solid #CBD5E1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+}
+
+.extra-item.selected .extra-checkbox {
+  background: var(--rose-primary);
+  border-color: var(--rose-primary);
+  color: #FFFFFF;
+}
+
+/* Pills pour le moment */
+.moment-pills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.moment-pill {
+  padding: 12px 8px;
+  border: 1.5px solid #F1E5E9;
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  text-align: center;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.moment-pill:hover {
+  border-color: var(--rose-primary);
+}
+
+.moment-pill.selected {
+  background: #FFF0F3;
+  border-color: var(--rose-primary);
+  color: var(--rose-deep);
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.15);
+}
+
+/* ==========================================================================
+   ÉTAPE 6 : RÉCAPITULATIF FINAL & DISPATCH WHATSAPP
+   ========================================================================== */
+.recap-card {
+  background: #FFFFFF;
+  border: 1.5px solid #FCE7F3;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.recap-card::after {
+  content: 'INVITATION OFFICIELLE';
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--gold-accent);
+  letter-spacing: 1px;
+  background: #FEF3C7;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.recap-row {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px dashed #F1E5E9;
+}
+
+.recap-row:last-child {
+  border-bottom: none;
+}
+
+.recap-label {
+  width: 38%;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.recap-value {
+  width: 62%;
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  word-break: break-word;
+}
+
+/* WhatsApp Dispatch Button */
+.btn-whatsapp {
+  width: 100%;
+  padding: 18px 24px;
+  font-size: 1.12rem;
+  font-weight: 800;
+  font-family: var(--font-sans);
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 10px 25px -4px rgba(37, 211, 102, 0.45);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  margin-bottom: 12px;
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 14px 30px -4px rgba(37, 211, 102, 0.6);
+}
+
+.btn-secondary {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1.5px solid #E2E8F0;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-secondary:hover {
+  background: #F8FAFC;
+  color: var(--text-dark);
+  border-color: #CBD5E1;
+}
+
+/* Navigation buttons (Précédent / Continuer) */
+.wizard-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.btn-back {
+  padding: 16px 22px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-back:hover {
+  background: #F8FAFC;
+  color: var(--text-dark);
+  border-color: #CBD5E1;
+}
+
+/* Modale de réglage secret / direct pour le numéro WhatsApp */
+.config-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+}
+
+.config-modal-overlay.show {
+  display: flex;
+}
+
+.config-modal {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  max-width: 440px;
+  width: 100%;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.config-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.config-modal-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.close-modal-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #94A3B8;
+  cursor: pointer;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 640px) {
+  .app-container {
+    padding: 12px 14px 30px 14px;
+  }
+
+  .luxury-card {
+    padding: 26px 18px;
+    border-radius: var(--radius-lg);
+  }
+
+  .step-title {
+    font-size: 1.55rem;
+  }
+
+  .step-subtitle {
+    font-size: 0.92rem;
+    margin-bottom: 20px;
+  }
+
+  .selection-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .choice-card-img-wrap {
+    height: 95px;
+  }
+
+  .choice-card-body {
+    padding: 10px;
+  }
+
+  .choice-card-title {
+    font-size: 0.88rem;
+  }
+
+  .choice-card-desc {
+    font-size: 0.72rem;
+  }
+
+  .arena-actions {
+    min-height: 160px;
+  }
+
+  .btn-yes {
+    padding: 16px 26px;
+    font-size: 1.05rem;
+  }
+
+  .btn-no {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+  .moment-pills {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .moment-pill {
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .recap-row {
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 0;
+  }
+
+  .recap-label {
+    width: 100%;
+    font-size: 0.78rem;
+  }
+
+  .recap-value {
+    width: 100%;
+    font-size: 0.92rem;
+  }
+}
+
+/* ==========================================================================
+   NOUVELLES FONCTIONNALITÉS PREMIUM — EXPÉRIENCE ROMANTIQUE ENRICHIE
+   ========================================================================== */
+
+/* --- 1. Enveloppe interactive du Message Secret --- */
+.envelope-interactive-wrap {
+  width: 100%;
+  max-width: 440px;
+  margin: 20px auto 28px auto;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.secret-envelope {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(145deg, #FFE4E6 0%, #FECDD3 100%);
+  border-radius: var(--radius-lg);
+  border: 2px solid #FDA4AF;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.secret-envelope:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+.envelope-pocket {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(254, 205, 211, 0.95) 0%, rgba(255, 228, 230, 0.98) 100%);
+  border-bottom: 2px solid #FDA4AF;
+  z-index: 3;
+  clip-path: polygon(0% 0%, 50% 55%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.envelope-wax-seal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 58px;
+  height: 58px;
+  background: radial-gradient(circle, #BE123C 30%, #881337 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 15px rgba(136, 19, 55, 0.4);
+  z-index: 5;
+  border: 2px solid #FDA4AF;
+  transition: all 0.3s ease;
+  animation: pulseBeat 2s infinite ease-in-out;
+}
+
+.secret-envelope.opened .envelope-wax-seal {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.3);
+  pointer-events: none;
+}
+
+.secret-letter-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  background: #FFFDF9;
+  border-radius: var(--radius-md);
+  padding: 22px 20px;
+  border: 1px solid #FDE68A;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+  transition: all 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: translateY(0);
+}
+
+.secret-envelope.opened .secret-letter-card {
+  transform: translateY(-40px);
+  z-index: 6;
+  box-shadow: 0 20px 40px rgba(190, 18, 60, 0.2);
+  border-color: #F43F5E;
+}
+
+.envelope-click-hint {
+  font-size: 0.85rem;
+  color: var(--rose-deep);
+  font-weight: 700;
+  text-align: center;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  animation: bounce 1.2s infinite alternate;
+}
+
+/* --- 2. Dose de Compliments Modal & Pill --- */
+.compliments-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: linear-gradient(135deg, #FFF1F2 0%, #FFE4E6 100%);
+  border: 1px solid var(--rose-border);
+  color: var(--rose-deep);
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+}
+
+.compliments-pill-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  background: #FFFFFF;
+}
+
+.compliments-modal-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-xl);
+  padding: 34px 26px;
+  max-width: 460px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid #FFE4E6;
+  animation: popScale 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.compliment-box {
+  background: #FFF5F7;
+  border-radius: var(--radius-lg);
+  border: 1.5px dashed #FDA4AF;
+  padding: 24px 20px;
+  margin: 18px 0;
+  min-height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-cursive);
+  font-size: 1.6rem;
+  color: var(--rose-velvet);
+  line-height: 1.35;
+  transition: all 0.3s ease;
+}
+
+.compliments-counter {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+/* --- 3. Mini-Jeu : Test de Compatibilité --- */
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.quiz-question-box {
+  background: #FFFFFF;
+  border: 1.5px solid #F1E5E9;
+  border-radius: var(--radius-lg);
+  padding: 18px 16px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+}
+
+.quiz-question-box.active {
+  border-color: var(--rose-primary);
+  box-shadow: 0 6px 18px rgba(225, 29, 72, 0.12);
+}
+
+.quiz-question-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quiz-options-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.quiz-option-btn {
+  padding: 12px 14px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  background: #FDF2F4;
+  border: 1.5px solid #FECDD3;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.quiz-option-btn:hover {
+  background: #FFE4E6;
+  border-color: var(--rose-primary);
+  transform: translateY(-2px);
+}
+
+.quiz-option-btn.selected {
+  background: linear-gradient(135deg, #F43F5E 0%, #E11D48 100%);
+  color: #FFFFFF;
+  border-color: var(--rose-primary);
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.35);
+}
+
+.quiz-result-card {
+  display: none;
+  background: linear-gradient(135deg, #FFF1F2 0%, #FFFBEB 100%);
+  border: 2px solid #FDE68A;
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  margin-top: 14px;
+  text-align: center;
+  animation: popScale 0.4s ease;
+}
+
+.quiz-result-score {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--rose-deep);
+  font-family: var(--font-serif);
+  margin: 6px 0;
+}
+
+/* --- 4. La Boîte à Surprises (3 Boîtes Mystérieuses) --- */
+.gift-boxes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 20px 0 28px 0;
+}
+
+.gift-box-card {
+  background: #FFFFFF;
+  border: 2px solid #F1E5E9;
+  border-radius: var(--radius-lg);
+  padding: 20px 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.gift-box-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: var(--shadow-md);
+  border-color: #FDA4AF;
+}
+
+.gift-box-icon {
+  font-size: 3.2rem;
+  margin-bottom: 8px;
+  transition: transform 0.4s ease;
+  display: inline-block;
+}
+
+.gift-box-card:hover .gift-box-icon {
+  transform: rotate(-10deg) scale(1.15);
+}
+
+.gift-box-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.gift-box-content {
+  display: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--rose-velvet);
+  background: #FFF1F2;
+  border-radius: var(--radius-md);
+  padding: 10px 8px;
+  margin-top: 10px;
+  border: 1px dashed var(--rose-primary);
+  animation: popScale 0.35s ease;
+  line-height: 1.35;
+}
+
+.gift-box-card.opened {
+  background: #FFFDF9;
+  border-color: #F59E0B;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.2);
+}
+
+.gift-box-card.opened .gift-box-content {
+  display: block;
+}
+
+.gift-box-card.opened .gift-box-icon {
+  transform: scale(1.1);
+}
+
+/* --- 5. Ambiance Musicale (Lecteur Discret) --- */
+.music-player-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--rose-border);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+}
+
+.music-toggle-btn {
+  background: var(--rose-soft);
+  border: 1px solid var(--rose-border);
+  color: var(--rose-deep);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.music-toggle-btn.playing {
+  background: var(--rose-primary);
+  color: #FFFFFF;
+  box-shadow: 0 0 10px rgba(225, 29, 72, 0.4);
+  animation: pulseBeat 1.8s infinite;
+}
+
+.music-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.music-volume-slider {
+  width: 60px;
+  height: 4px;
+  accent-color: var(--rose-primary);
+  cursor: pointer;
+}
+
+/* --- 6. Petit Espace de Confidences --- */
+.confidences-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.confidence-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.confidence-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* --- 7. Lettre Romantique Finale --- */
+.romantic-parchment-letter {
+  background: #FFFDF9;
+  border: 2px solid #FDE68A;
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  box-shadow: var(--shadow-md);
+  margin: 18px 0 28px 0;
+  position: relative;
+  text-align: center;
+}
+
+.romantic-parchment-letter::before {
+  content: '🌹';
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  background: #FFFDF9;
+  padding: 0 8px;
+}
+
+.parchment-text {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--text-dark);
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+.parchment-signature {
+  font-family: var(--font-cursive);
+  font-size: 1.6rem;
+  color: var(--rose-deep);
+  margin-top: 16px;
+}
+
+/* Responsive pour les nouvelles boîtes et quiz */
+@media (max-width: 640px) {
+  .gift-boxes-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .quiz-options-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .music-volume-slider {
+    display: none;
+  }
+
+  .compliments-pill-btn {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+}

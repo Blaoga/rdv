@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Une petite question pour toi… ❤️</title>
+  
+  <!-- Meta SEO & Social Sharing (WhatsApp, iMessage, Facebook) -->
+  <meta name="description" content="Une invitation toute particulière et une petite surprise rien que pour toi.">
+  <meta name="theme-color" content="#E11D48">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Une invitation très spéciale pour toi… ❤️">
+  <meta property="og:description" content="Ouvre pour découvrir ce que j'ai préparé pour nous deux ✨">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=1200&auto=format&fit=crop&q=80">
+
+  <!-- Favicon Coeur -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23E11D48'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>">
+
+  <!-- Google Fonts: Playfair Display + Plus Jakarta Sans + Caveat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient Floating Canvas Background (Hearts & Sparkles) -->
+  <canvas id="ambient-canvas"></canvas>
+  <div class="ambient-glow glow-top-left"></div>
+  <div class="ambient-glow glow-bottom-right"></div>
+
+  <!-- Main Container -->
+  <div class="app-container">
+
+    <!-- Top Navigation -->
+    <header class="top-navbar">
+      <div class="nav-brand">
+        <span class="nav-brand-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </span>
+        <span>Rendez-vous</span>
+      </div>
+
+      <div class="nav-actions">
+        <!-- Bouton Compliments -->
+        <button id="open-compliments-btn" class="compliments-pill-btn" title="Une dose de compliments">
+          <span>💌 Compliments</span>
+        </button>
+
+        <!-- Lecteur musical romantique doux (désactivé par défaut) -->
+        <div class="music-player-bar" id="music-player-bar" title="Ambiance musicale douce">
+          <button id="music-toggle-btn" class="music-toggle-btn" aria-label="Musique romantique" title="Jouer / Pause la musique douce">
+            <span id="music-icon">🎵</span>
+          </button>
+          <input type="range" id="music-volume" class="music-volume-slider" min="0" max="1" step="0.05" value="0.3" title="Volume de la musique">
+        </div>
+
+        <!-- Audio toggle button (bruitages) -->
+        <button id="audio-toggle-btn" class="icon-btn" title="Activer / Couper le son" aria-label="Toggle Sound">
+          <svg id="sound-on-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <svg id="sound-off-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+        </button>
+
+        <!-- Quick Config Modal button (to change phone number on the fly) -->
+        <button id="open-config-btn" class="icon-btn" title="Paramètres WhatsApp" aria-label="WhatsApp Settings">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Progress Tracker -->
+    <div id="progress-container" class="progress-container">
+      <div class="progress-header">
+        <span id="progress-step-text">Étape 2 sur 5</span>
+        <span id="progress-percent-badge" class="step-badge">40%</span>
+      </div>
+      <div class="progress-track">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         ÉTAPE 1 : PREMIÈRE PAGE — SON PRÉNOM
+         ==================================================================== -->
+    <div id="step-1" class="wizard-step active">
+      <div class="luxury-card">
+        <div class="hero-envelope">💌</div>
+
+        <span class="badge-pill">
+          ✨ Une invitation confidentielle
+        </span>
+
+        <h1 class="step-title">Une petite question pour toi…</h1>
+        <p class="step-subtitle">
+          J'ai imaginé une petite expérience sur mesure avant de te poser la vraie question…
+        </p>
+
+        <form id="form-name" onsubmit="event.preventDefault(); window.App.submitName();">
+          <div class="input-group">
+            <label for="her-name-input" class="input-label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              Comment tu t'appelles ?
+            </label>
+            <input 
+              type="text" 
+              id="her-name-input" 
+              class="custom-input" 
+              placeholder="Écris ton joli prénom ici…" 
+              autocomplete="name" 
+              required
+              autofocus
+            />
+          </div>
+
+          <button type="submit" id="btn-start" class="btn-primary">
+            <span>Continuer</span>
+            <span>💌</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         ÉTAPE 1-B : MESSAGE SECRET PERSONNALISÉ DANS L'ENVELOPPE
+         ==================================================================== -->
+    <div id="step-secret-message" class="wizard-step">
+      <div class="luxury-card">
+        <span class="badge-pill">
+          💌 Message secret confidentiel
+        </span>
+
+        <h2 class="step-title">
+          <span class="user-name-target">Toi</span>, tu as reçu un mot…
+        </h2>
+
+        <p class="step-subtitle">
+          Touche l'enveloppe pour briser le sceau de cire et révéler le mot doux :
+        </p>
+
+        <div class="envelope-interactive-wrap" id="secret-envelope-trigger">
+          <div class="secret-envelope" id="secret-envelope-el">
+            <div class="envelope-wax-seal">❤️</div>
+            <div class="envelope-pocket"></div>
+            <div class="secret-letter-card">
+              <p style="font-family: var(--font-cursive); font-size: 1.55rem; color: var(--rose-velvet); line-height: 1.4;">
+                « Je ne sais pas encore comment cette histoire va commencer, mais je sais que j'aimerais bien découvrir un peu plus la personne qui se cache derrière ce joli prénom. ❤️ »
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="envelope-click-hint" id="envelope-click-hint">
+          <span>👉 Touche l'enveloppe pour l'ouvrir</span>
+        </div>
+
+        <div class="wizard-nav" style="margin-top: 15px;">
+          <button id="btn-open-envelope" class="btn-primary" style="display: none;">
+            <span>Découvrir la suite</span>
+            <span>✨</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="step-2" class="wizard-step">
+      <div class="luxury-card">
+        <div class="question-avatar-wrap">
+          <div class="question-avatar">✨</div>
+          <div class="floating-heart-bubble">❤️</div>
+        </div>
+
+        <span class="badge-pill">
+          🌹 Juste toi et moi
+        </span>
+
+        <h2 id="question-title" class="step-title">
+          <span class="user-name-target">Toi</span>, veux-tu sortir avec moi ? ❤️
+        </h2>
+
+        <p class="step-subtitle">
+          Promis, j'ai prévu quelque chose de vraiment sympa… Tu n'as qu'à choisir la suite !
+        </p>
+
+        <!-- Espace d'action avec le bouton fugitif -->
+        <div id="arena-actions" class="arena-actions">
+          <button id="btn-yes" class="btn-yes">
+            <span>Oui, avec plaisir</span>
+            <span>❤️</span>
+          </button>
+
+          <button id="btn-no" class="btn-no">
+            <span>Non</span>
+            <span>🙈</span>
+          </button>
+        </div>
+
+        <div id="escape-toast" class="escape-toast">
+          Oups, le bouton a glissé ! 😜
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         ÉTAPE 2-B : MINI-JEU — TEST DE COMPATIBILITÉ
+         ==================================================================== -->
+    <div id="step-quiz" class="wizard-step">
+      <div class="luxury-card">
+        <span class="badge-pill">
+          😏 Petit test complice
+        </span>
+
+        <h2 class="step-title">Et si on testait notre compatibilité ? 😏</h2>
+        <p class="step-subtitle">
+          5 questions amusantes pour voir si nos ondes sont connectées (ou juste pour rire !) :
+        </p>
+
+        <div class="quiz-container">
+          <!-- Question 1 -->
+          <div class="quiz-question-box" data-q="1">
+            <div class="quiz-question-title">
+              <span>🕯️</span> 1. Tu préfères une soirée romantique ou une aventure improvisée ?
+            </div>
+            <div class="quiz-options-row">
+              <button type="button" class="quiz-option-btn" data-val="Soirée romantique">
+                <span>🕯️ Soirée romantique</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-val="Aventure improvisée">
+                <span>🚗 Aventure improvisée</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="quiz-question-box" data-q="2">
+            <div class="quiz-question-title">
+              <span>🍰</span> 2. Tu es plutôt sucré ou salé ?
+            </div>
+            <div class="quiz-options-row">
+              <button type="button" class="quiz-option-btn" data-val="Plutôt sucré">
+                <span>🍰 Plutôt sucré</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-val="Plutôt salé">
+                <span>🍕 Plutôt salé</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="quiz-question-box" data-q="3">
+            <div class="quiz-question-title">
+              <span>💬</span> 3. Tu préfères parler pendant des heures ou profiter du silence ensemble ?
+            </div>
+            <div class="quiz-options-row">
+              <button type="button" class="quiz-option-btn" data-val="Parler des heures">
+                <span>🗣️ Parler des heures</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-val="Silence complice">
+                <span>🤫 Silence complice</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="quiz-question-box" data-q="4">
+            <div class="quiz-question-title">
+              <span>🎁</span> 4. Tu préfères les surprises ou tout planifier ?
+            </div>
+            <div class="quiz-options-row">
+              <button type="button" class="quiz-option-btn" data-val="Les surprises">
+                <span>🎁 J'adore les surprises</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-val="Tout planifier">
+                <span>📋 Tout planifier</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Question 5 -->
+          <div class="quiz-question-box" data-q="5">
+            <div class="quiz-question-title">
+              <span>✈️</span> 5. Si on devait voyager ensemble, tu choisirais plage ou montagne ?
+            </div>
+            <div class="quiz-options-row">
+              <button type="button" class="quiz-option-btn" data-val="Plage">
+                <span>🏖️ Plage & coucher de soleil</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-val="Montagne">
+                <span>🏔️ Montagne & chalet cosy</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Boîte de résultat humoristique -->
+        <div id="quiz-result-card" class="quiz-result-card">
+          <span style="font-size: 2rem;">💘</span>
+          <div class="quiz-result-score">Compatibilité : 99.8% !</div>
+          <p style="font-size: 0.92rem; color: var(--text-dark); line-height: 1.5; margin-top: 6px;">
+            Selon un algorithme totalement objectif (et pas du tout sous le charme), nos esprits sont parfaitement synchronisés. Que nos goûts se ressemblent ou se complètent, ce rendez-vous promet d'être génial ! 😂❤️
+          </p>
+        </div>
+
+        <div class="wizard-nav" style="margin-top: 18px;">
+          <button type="button" id="btn-skip-quiz" class="btn-back">
+            <span>Passer cette étape →</span>
+          </button>
+          <button type="button" id="btn-continue-quiz" class="btn-primary" disabled>
+            <span>Choisir notre lieu</span>
+            <span>📍</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="step-3" class="wizard-step">
+      <div class="luxury-card">
+        <span class="badge-pill">
+          📍 Première décision
+        </span>
+
+        <h2 class="step-title">Super ! Alors, où aimerais-tu qu'on se voie ?</h2>
+        <p class="step-subtitle">
+          Choisis l'ambiance qui te ferait le plus plaisir pour ce premier moment :
+        </p>
+
+        <div id="places-grid" class="selection-grid">
+          <!-- 1. Parc -->
+          <div class="choice-card" data-id="parc" data-title="Un joli parc">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1519331379826-f10be5486c6f?w=600&auto=format&fit=crop&q=80" alt="Parc romantique" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🌳 Nature</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🌳 Un joli parc</div>
+              <div class="choice-card-desc">Un endroit tranquille pour parler, rire et apprendre à mieux se connaître.</div>
+            </div>
+          </div>
+
+          <!-- 2. Restaurant Chic -->
+          <div class="choice-card" data-id="restaurant" data-title="Un restaurant chic">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&auto=format&fit=crop&q=80" alt="Restaurant chic" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🍽️ Gourmand</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🍽️ Un restaurant chic</div>
+              <div class="choice-card-desc">Un restaurant chic, parce que tu mérites le meilleur.</div>
+            </div>
+          </div>
+
+          <!-- 3. Piscine -->
+          <div class="choice-card" data-id="piscine" data-title="Une piscine">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=600&auto=format&fit=crop&q=80" alt="Piscine détente" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🏊 Soleil</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🏊 Une piscine</div>
+              <div class="choice-card-desc">Une piscine, du soleil et une bonne compagnie.</div>
+            </div>
+          </div>
+
+          <!-- 4. Café élégant -->
+          <div class="choice-card" data-id="cafe" data-title="Un café élégant">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&auto=format&fit=crop&q=80" alt="Café élégant" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">☕ Douceur</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">☕ Un café élégant</div>
+              <div class="choice-card-desc">Café chaud, douceurs et regards complices.</div>
+            </div>
+          </div>
+
+          <!-- 5. Rooftop -->
+          <div class="choice-card" data-id="rooftop" data-title="Un rooftop avec vue">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=600&auto=format&fit=crop&q=80" alt="Rooftop vue panoramique" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🌇 Panoramique</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🌇 Un rooftop vue magique</div>
+              <div class="choice-card-desc">Les lumières de la ville et une vue magique sous les étoiles.</div>
+            </div>
+          </div>
+
+          <!-- 6. Cinéma -->
+          <div class="choice-card" data-id="cinema" data-title="Un cinéma">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&auto=format&fit=crop&q=80" alt="Cinéma cosy" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🎬 Popcorn</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🎬 Un cinéma</div>
+              <div class="choice-card-desc">Popcorn partagé et ambiance feutrée dans les fauteuils moelleux.</div>
+            </div>
+          </div>
+
+          <!-- 7. Balade coucher de soleil -->
+          <div class="choice-card" data-id="coucher-soleil" data-title="Balade coucher de soleil">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=80" alt="Coucher de soleil" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🌅 Romantique</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🌅 Balade au coucher de soleil</div>
+              <div class="choice-card-desc">Des couleurs dorées et une atmosphère magique rien qu'à nous.</div>
+            </div>
+          </div>
+
+          <!-- 8. Autre endroit -->
+          <div class="choice-card" data-id="autre" data-title="Autre endroit de ton choix">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=600&auto=format&fit=crop&q=80" alt="Endroit magique" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">✨ Surprise</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">✨ Un autre endroit</div>
+              <div class="choice-card-desc">Un lieu secret ou ton spot préféré à la fac ou en ville.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Saisie pour endroit personnalisé -->
+        <div id="custom-place-box" class="custom-input-box">
+          <label for="custom-place-input" class="input-label">Dis-moi où tu aimerais qu'on aille :</label>
+          <input type="text" id="custom-place-input" class="custom-input" placeholder="Ex: Mon café préféré, une plage, etc.">
+        </div>
+
+        <div class="wizard-nav">
+          <button id="btn-back-step-3" class="btn-back">
+            <span>← Précédent</span>
+          </button>
+          <button id="btn-continue-step-3" class="btn-primary" disabled>
+            <span>Continuer</span>
+            <span>❤️</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         ÉTAPE 4 : QUATRIÈME PAGE — CHOIX DE LA NOURRITURE
+         ==================================================================== -->
+    <div id="step-4" class="wizard-step">
+      <div class="luxury-card">
+        <span class="badge-pill">
+          🍴 Les papilles en fête
+        </span>
+
+        <h2 class="step-title">Maintenant, parlons de la partie la plus importante… Qu'est-ce qu'on mange ? 😋</h2>
+        
+        <div class="humor-note">
+          <span>😂</span>
+          <span>Attention, ton choix peut influencer mon humeur pendant les 5 prochaines minutes.</span>
+        </div>
+
+        <p class="step-subtitle">
+          (Tu peux sélectionner <strong>plusieurs choix</strong> sans hésitation !)
+        </p>
+
+        <div id="food-grid" class="selection-grid">
+          <!-- 1. Sushi -->
+          <div class="choice-card" data-id="sushi" data-title="Sushi">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&auto=format&fit=crop&q=80" alt="Sushi" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🍣 Frais</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🍣 Sushi</div>
+              <div class="choice-card-desc">Frais, raffiné et parfait pour papoter.</div>
+            </div>
+          </div>
+
+          <!-- 2. Pâtes italiennes -->
+          <div class="choice-card" data-id="pates" data-title="Pâtes italiennes">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=600&auto=format&fit=crop&q=80" alt="Pâtes italiennes" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🍝 Dolce Vita</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🍝 Pâtes italiennes</div>
+              <div class="choice-card-desc">Ambiance La Belle et le Clochard assurée.</div>
+            </div>
+          </div>
+
+          <!-- 3. Pizza -->
+          <div class="choice-card" data-id="pizza" data-title="Pizza">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&auto=format&fit=crop&q=80" alt="Pizza artisanale" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🍕 Indémodable</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🍕 Pizza croustillante</div>
+              <div class="choice-card-desc">Fromage fondant et bonne humeur partagée.</div>
+            </div>
+          </div>
+
+          <!-- 4. Burger gourmet -->
+          <div class="choice-card" data-id="burger" data-title="Burger gourmet">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&auto=format&fit=crop&q=80" alt="Burger gourmet" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🍔 Gourmandise</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🍔 Burger gourmet</div>
+              <div class="choice-card-desc">Généreux, frites dorées et zéro culpabilité.</div>
+            </div>
+          </div>
+
+          <!-- 5. Grillades -->
+          <div class="choice-card" data-id="grillades" data-title="Grillades">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80" alt="Grillades" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🥩 Savoureux</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🥩 Grillades</div>
+              <div class="choice-card-desc">Viande tendre, épices et saveurs braisées.</div>
+            </div>
+          </div>
+
+          <!-- 6. Poulet accompagné -->
+          <div class="choice-card" data-id="poulet" data-title="Poulet accompagné">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&auto=format&fit=crop&q=80" alt="Poulet accompagné" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🍗 Croustillant</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🍗 Poulet bien assaisonné</div>
+              <div class="choice-card-desc">Accompagné d'allocos, riz parfumé ou frites.</div>
+            </div>
+          </div>
+
+          <!-- 7. Gâteau et desserts -->
+          <div class="choice-card" data-id="dessert" data-title="Gâteau & Desserts">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&auto=format&fit=crop&q=80" alt="Gâteau et desserts" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🍰 Douceur</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🍰 Gâteau & Desserts</div>
+              <div class="choice-card-desc">Une part sucrée pour les gourmandes.</div>
+            </div>
+          </div>
+
+          <!-- 8. Chocolat -->
+          <div class="choice-card" data-id="chocolat" data-title="Chocolat">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=600&auto=format&fit=crop&q=80" alt="Chocolat chaud et douceurs" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🍫 Plaisir</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🍫 Chocolat fondant</div>
+              <div class="choice-card-desc">Parce que le chocolat rend tout meilleur.</div>
+            </div>
+          </div>
+
+          <!-- 9. Autre idée -->
+          <div class="choice-card" data-id="autre-food" data-title="Une autre idée">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&auto=format&fit=crop&q=80" alt="Autre envie" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🥂 Surprise</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🥂 Une autre idée</div>
+              <div class="choice-card-desc">Une envie spontanée ou ton péché mignon.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Champ facultatif pour autre envie -->
+        <div class="input-group" style="margin-bottom: 22px;">
+          <label for="custom-food-input" class="input-label">Tu as une autre envie ? Dis-moi tout…</label>
+          <input type="text" id="custom-food-input" class="custom-input" placeholder="Ex: Tacos, Glace, Street-food, etc.">
+        </div>
+
+        <div class="wizard-nav">
+          <button id="btn-back-step-4" class="btn-back">
+            <span>← Précédent</span>
+          </button>
+          <button id="btn-continue-step-4" class="btn-primary" disabled>
+            <span>Continuer</span>
+            <span>❤️</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         ÉTAPE 4-B : LA BOÎTE À SURPRISES (3 BOÎTES MYSTÉRIEUSES)
+         ==================================================================== -->
+    <div id="step-surprises" class="wizard-step">
+      <div class="luxury-card">
+        <span class="badge-pill">
+          🎁 Petites attentions mystères
+        </span>
+
+        <h2 class="step-title">J'ai quelques surprises pour toi…</h2>
+        <p class="step-subtitle">
+          Touche une boîte pour l'ouvrir (ou ouvre-les toutes si tu es trop curieuse !) :
+        </p>
+
+        <div class="gift-boxes-grid">
+          <!-- Boîte 1 -->
+          <div class="gift-box-card" id="gift-box-1" data-id="1">
+            <span class="gift-box-icon">🎁</span>
+            <span class="gift-box-name">Boîte Rose Poudré</span>
+            <div class="gift-box-content">
+              Une glace offerte pendant notre rendez-vous. 🍦
+            </div>
+          </div>
+
+          <!-- Boîte 2 -->
+          <div class="gift-box-card" id="gift-box-2" data-id="2">
+            <span class="gift-box-icon">🎁</span>
+            <span class="gift-box-name">Boîte Dorée</span>
+            <div class="gift-box-content">
+              Le droit de choisir notre prochaine destination. 🌍
+            </div>
+          </div>
+
+          <!-- Boîte 3 -->
+          <div class="gift-box-card" id="gift-box-3" data-id="3">
+            <span class="gift-box-icon">🎁</span>
+            <span class="gift-box-name">Boîte Rouge Rubis</span>
+            <div class="gift-box-content">
+              Une surprise que je préfère te révéler en personne. 🤫❤️
+            </div>
+          </div>
+        </div>
+
+        <div class="wizard-nav">
+          <button type="button" id="btn-back-step-surprises" class="btn-back">
+            <span>← Précédent</span>
+          </button>
+          <button type="button" id="btn-continue-surprises" class="btn-primary">
+            <span>Découvrir les petits plus</span>
+            <span>✨</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="step-5" class="wizard-step">
+      <div class="luxury-card">
+        <span class="badge-pill">
+          ✨ Les petites attentions
+        </span>
+
+        <h2 class="step-title">On rend ce rendez-vous encore plus spécial ? ✨</h2>
+        <p class="step-subtitle">
+          Sélectionne ce qui ferait chavirer ton cœur :
+        </p>
+
+        <!-- Liste des extras -->
+        <div id="extras-list" class="extras-list">
+          <div class="extra-item" data-id="surprise">
+            <div class="extra-item-left">
+              <span class="extra-icon">🌹</span>
+              <span class="extra-label">Une petite surprise</span>
+            </div>
+            <span class="extra-checkbox">✓</span>
+          </div>
+
+          <div class="extra-item" data-id="playlist">
+            <div class="extra-item-left">
+              <span class="extra-icon">🎶</span>
+              <span class="extra-label">Une playlist spéciale</span>
+            </div>
+            <span class="extra-checkbox">✓</span>
+          </div>
+
+          <div class="extra-item" data-id="promenade">
+            <div class="extra-item-left">
+              <span class="extra-icon">🌅</span>
+              <span class="extra-label">Une promenade au coucher du soleil</span>
+            </div>
+            <span class="extra-checkbox">✓</span>
+          </div>
+
+          <div class="extra-item" data-id="photos">
+            <div class="extra-item-left">
+              <span class="extra-icon">📸</span>
+              <span class="extra-label">Quelques jolies photos ensemble</span>
+            </div>
+            <span class="extra-checkbox">✓</span>
+          </div>
+
+          <div class="extra-item" data-id="glace">
+            <div class="extra-item-left">
+              <span class="extra-icon">🍦</span>
+              <span class="extra-label">Une glace après le repas</span>
+            </div>
+            <span class="extra-checkbox">✓</span>
+          </div>
+
+          <div class="extra-item" data-id="cadeau">
+            <div class="extra-item-left">
+              <span class="extra-icon">🎁</span>
+              <span class="extra-label">Un petit cadeau surprise</span>
+            </div>
+            <span class="extra-checkbox">✓</span>
+          </div>
+
+          <div class="extra-item" data-id="discussion">
+            <div class="extra-item-left">
+              <span class="extra-icon">💬</span>
+              <span class="extra-label">Un moment pour discuter de tout et de rien</span>
+            </div>
+            <span class="extra-checkbox">✓</span>
+          </div>
+        </div>
+
+        <!-- Moment préféré -->
+        <div class="input-group">
+          <label class="input-label">Tu préfères quel moment ?</label>
+          <div id="moment-pills" class="moment-pills">
+            <div class="moment-pill" data-moment="Après-midi">
+              <span>☀️</span>
+              <span>Après-midi</span>
+            </div>
+            <div class="moment-pill" data-moment="Au coucher du soleil">
+              <span>🌅</span>
+              <span>Au coucher du soleil</span>
+            </div>
+            <div class="moment-pill" data-moment="Soirée">
+              <span>🌙</span>
+              <span>Soirée</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Date souhaitée -->
+        <div class="input-group">
+          <label for="date-picker-input" class="input-label">Tu as une date en tête ?</label>
+          <input type="date" id="date-picker-input" class="custom-input">
+        </div>
+
+        <!-- Message libre -->
+        <div class="input-group">
+          <label for="custom-note-input" class="input-label">Une petite précision pour moi ?</label>
+          <textarea id="custom-note-input" class="custom-input" rows="2" placeholder="Tes disponibilités, une allergie, ou un mot doux…"></textarea>
+        </div>
+
+        <div class="romantic-quote">
+          « Promis, je ferai de mon mieux pour que tu passes un bon moment. ❤️ »
+        </div>
+
+        <div class="wizard-nav">
+          <button id="btn-back-step-5" class="btn-back">
+            <span>← Précédent</span>
+          </button>
+          <button id="btn-continue-step-5" class="btn-primary">
+            <span>Continuer</span>
+            <span>💌</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         ÉTAPE 5-B : PETIT ESPACE DE CONFIDENCES (FACULTATIF)
+         ==================================================================== -->
+    <div id="step-confidences" class="wizard-step">
+      <div class="luxury-card">
+        <span class="badge-pill">
+          💬 Juste pour briser la glace
+        </span>
+
+        <h2 class="step-title">Avant notre rendez-vous, j'aimerais apprendre à te connaître…</h2>
+        <p class="step-subtitle">
+          Quelques petites confidences légères (100% facultatives, réponds si tu en as envie !) :
+        </p>
+
+        <div class="confidences-grid">
+          <div class="confidence-item">
+            <label for="conf-smile" class="confidence-label">
+              <span>✨</span> Quelle est la chose qui te fait sourire immédiatement ?
+            </label>
+            <input type="text" id="conf-smile" class="custom-input" placeholder="Un souvenir, un fou rire, un geste doux…">
+          </div>
+
+          <div class="confidence-item">
+            <label for="conf-pleasure" class="confidence-label">
+              <span>🍫</span> Quel est ton petit plaisir préféré ?
+            </label>
+            <input type="text" id="conf-pleasure" class="custom-input" placeholder="Une douceur, une chanson, une série sous la couette…">
+          </div>
+
+          <div class="confidence-item">
+            <label for="conf-dream-place" class="confidence-label">
+              <span>✈️</span> Quel endroit rêves-tu de visiter ?
+            </label>
+            <input type="text" id="conf-dream-place" class="custom-input" placeholder="Une ville romantique, une plage déserte, un pays lointain…">
+          </div>
+
+          <div class="confidence-item">
+            <label for="conf-date-def" class="confidence-label">
+              <span>🕯️</span> Quelle est ta définition d'un rendez-vous parfait ?
+            </label>
+            <input type="text" id="conf-date-def" class="custom-input" placeholder="Simple, authentique, spontané, magique…">
+          </div>
+
+          <div class="confidence-item">
+            <label for="conf-attention" class="confidence-label">
+              <span>🎁</span> Quelle petite attention te fait plaisir ?
+            </label>
+            <input type="text" id="conf-attention" class="custom-input" placeholder="Un mot doux inattendu, une écoute attentive, un café…">
+          </div>
+        </div>
+
+        <div class="wizard-nav">
+          <button type="button" id="btn-skip-confidences" class="btn-back">
+            <span>Passer cette étape →</span>
+          </button>
+          <button type="button" id="btn-continue-confidences" class="btn-primary">
+            <span>Enregistrer & Continuer</span>
+            <span>💌</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         ÉTAPE 5-C : UNE LETTRE ROMANTIQUE FINALE
+         ==================================================================== -->
+    <div id="step-letter" class="wizard-step">
+      <div class="luxury-card">
+        <span class="badge-pill">
+          💖 Un petit mot du fond du cœur
+        </span>
+
+        <h2 class="step-title">Une dernière petite pensée pour toi…</h2>
+
+        <div class="romantic-parchment-letter">
+          <p class="parchment-text">
+            « Tu sais, je ne cherche pas à organiser le rendez-vous le plus parfait du monde.<br><br>
+            Je veux simplement partager un joli moment avec toi, apprendre à te connaître davantage, rire, discuter et créer peut-être un beau souvenir.<br><br>
+            Et si cette petite aventure commençait maintenant ? ❤️ »
+          </p>
+          <div class="parchment-signature">
+            Hâte de partager ce moment avec toi
+          </div>
+        </div>
+
+        <button type="button" id="btn-continue-letter" class="btn-primary" style="margin-top: 10px;">
+          <span>J'ai hâte de découvrir la suite ❤️</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         ÉTAPE 6 : SIXIÈME PAGE — RÉCAPITULATIF FINAL & DISPATCH WHATSAPP
+         ==================================================================== -->
+    <div id="step-6" class="wizard-step">
+      <div class="luxury-card">
+        <span class="badge-pill">
+          💌 Notre futur rendez-vous
+        </span>
+
+        <h2 class="step-title">Alors, on organise notre petit rendez-vous ? ❤️</h2>
+        <p class="step-subtitle">
+          Voici le récapitulatif complet de ce que tu as choisi :
+        </p>
+
+        <!-- Ticket Récapitulatif -->
+        <div class="recap-card">
+          <div class="recap-row">
+            <div class="recap-label">
+              <span>👤</span>
+              <span>Ton prénom</span>
+            </div>
+            <div id="recap-name" class="recap-value">—</div>
+          </div>
+
+          <div class="recap-row">
+            <div class="recap-label">
+              <span>📍</span>
+              <span>Lieu choisi</span>
+            </div>
+            <div id="recap-place" class="recap-value">—</div>
+          </div>
+
+          <div class="recap-row">
+            <div class="recap-label">
+              <span>🍴</span>
+              <span>Nourriture</span>
+            </div>
+            <div id="recap-food" class="recap-value">—</div>
+          </div>
+
+          <div class="recap-row">
+            <div class="recap-label">
+              <span>✨</span>
+              <span>Petits extras</span>
+            </div>
+            <div id="recap-extras" class="recap-value">—</div>
+          </div>
+
+          <div class="recap-row">
+            <div class="recap-label">
+              <span>📅</span>
+              <span>Date & Moment</span>
+            </div>
+            <div id="recap-datetime" class="recap-value">—</div>
+          </div>
+
+          <div class="recap-row">
+            <div class="recap-label">
+              <span>💬</span>
+              <span>Ton mot</span>
+            </div>
+            <div id="recap-message" class="recap-value">—</div>
+          </div>
+        </div>
+
+        <!-- Citation romantique -->
+        <div class="romantic-quote" style="margin-bottom: 24px;">
+          « Le plus important, ce n'est pas vraiment l'endroit ni ce qu'on va manger… C'est surtout de passer un joli moment avec toi. ❤️ »
+        </div>
+
+        <!-- Bouton WhatsApp -->
+        <button id="btn-send-whatsapp" class="btn-whatsapp">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          <span>Envoyer mon invitation</span>
+          <span>💌</span>
+        </button>
+
+        <!-- Copier le message en secours -->
+        <button id="btn-copy-summary" class="btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span>Copier le texte du message</span>
+        </button>
+
+        <!-- Revoir les surprises débloquées -->
+        <button type="button" id="btn-review-surprises" class="btn-secondary" style="margin-top: 8px;">
+          <span>🎁 Revoir mes surprises débloquées</span>
+        </button>
+
+        <div class="wizard-nav" style="margin-top: 14px;">
+          <button id="btn-back-step-6" class="btn-back" style="width: 100%; justify-content: center;">
+            <span>← Modifier mes choix</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- End App Container -->
+
+  <!-- Celebration Modal Overlay (after "Oui" or after Sending WhatsApp) -->
+  <div id="celebration-overlay" class="celebration-overlay">
+    <div class="celebration-modal">
+      <div id="celebration-emoji" class="celebration-emoji">🥰❤️</div>
+      <h3 id="celebration-title" class="step-title" style="margin-bottom: 8px;">Je savais que tu allais dire oui ! 😌❤️</h3>
+      <p id="celebration-desc" class="step-subtitle" style="margin-bottom: 0;">
+        Préparons ce moment inoubliable ensemble…
+      </p>
+    </div>
+  </div>
+
+  <!-- Quick Config Modal (Pour modifier le numéro WhatsApp sans coder) -->
+  <div id="config-modal" class="config-modal-overlay">
+    <div class="config-modal">
+      <div class="config-modal-header">
+        <h3 class="config-modal-title">⚙️ Configuration WhatsApp</h3>
+        <button id="close-config-btn" class="close-modal-btn">&times;</button>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">
+        Indiquez le numéro WhatsApp (avec l'indicatif pays, sans '+') qui recevra les réponses :
+      </p>
+      <div class="input-group">
+        <label for="cfg-whatsapp-input" class="input-label">Numéro WhatsApp destinataire :</label>
+        <input type="tel" id="cfg-whatsapp-input" class="custom-input" placeholder="Ex: 33612345678 ou 2250712345678">
+      </div>
+      <button id="cfg-save-btn" class="btn-primary" style="margin-top: 10px;">
+        <span>Enregistrer les paramètres</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal Dose de Compliments -->
+  <div id="compliments-modal" class="config-modal-overlay">
+    <div class="compliments-modal-card">
+      <button id="close-compliments-btn" class="close-modal-btn" style="position: absolute; top: 16px; right: 18px;">&times;</button>
+      <span style="font-size: 2.4rem;">💌</span>
+      <h3 class="step-title" style="font-size: 1.45rem; margin-top: 6px; margin-bottom: 4px;">Une petite dose de compliments</h3>
+      <p class="compliments-counter" id="compliment-counter-text">Compliment 1 sur 22</p>
+
+      <div class="compliment-box" id="compliment-text-display">
+        « Ton sourire mérite probablement son propre réseau social. »
+      </div>
+
+      <button type="button" id="btn-next-compliment" class="btn-primary" style="margin-bottom: 8px;">
+        <span>Découvrir un autre compliment ✨</span>
+      </button>
+      <button type="button" id="btn-close-compliments-sub" class="btn-secondary">
+        <span>Fermer 💖</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal Revoir les Surprises Débloquées -->
+  <div id="surprises-review-modal" class="config-modal-overlay">
+    <div class="config-modal" style="text-align: center;">
+      <div class="config-modal-header">
+        <h3 class="config-modal-title">🎁 Tes surprises débloquées</h3>
+        <button id="close-surprises-modal-btn" class="close-modal-btn">&times;</button>
+      </div>
+      <div id="surprises-unlocked-list" style="display: flex; flex-direction: column; gap: 10px; margin: 16px 0; text-align: left;">
+        <!-- Injected dynamically in app.js -->
+      </div>
+      <button type="button" id="close-surprises-modal-action" class="btn-primary" style="margin-top: 10px;">
+        <span>Super ! ❤️</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Application Scripts -->
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
