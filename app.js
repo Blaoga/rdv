@@ -1061,7 +1061,12 @@ J'attends notre rendez-vous avec impatience ! 😊✨`;
     const input = document.getElementById('cfg-whatsapp-input');
 
     const saved = localStorage.getItem('romantic_wa_number');
-    if (saved) state.whatsappNumber = saved;
+    if (saved && saved !== '33612345678') {
+      state.whatsappNumber = saved;
+    } else {
+      state.whatsappNumber = (window.APP_CONFIG && window.APP_CONFIG.whatsappNumber) || '237655752004';
+      localStorage.setItem('romantic_wa_number', state.whatsappNumber);
+    }
     if (input) input.value = state.whatsappNumber;
 
     if (openBtn && modal) {
@@ -1085,14 +1090,17 @@ J'attends notre rendez-vous avec impatience ! 😊✨`;
 
     if (saveBtn && input && modal) {
       saveBtn.addEventListener('click', () => {
-        const val = input.value.trim().replace(/[^0-9]/g, '');
+        let val = input.value.trim().replace(/[^0-9]/g, '');
+        if (val.length === 9 && val.startsWith('6')) {
+          val = '237' + val;
+        }
         if (val.length >= 7) {
           state.whatsappNumber = val;
           localStorage.setItem('romantic_wa_number', val);
           modal.classList.remove('show');
           playTone(800, 0.2, 'sine', 0.1);
         } else {
-          alert('Veuillez entrer un numéro valide avec son indicatif (ex: 33612345678)');
+          alert('Veuillez entrer un numéro valide (ex: 655752004 ou 237655752004)');
         }
       });
     }

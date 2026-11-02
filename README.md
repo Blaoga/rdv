@@ -101,7 +101,7 @@ Inspiré du niveau de finition et de qualité UI/UX de référence (design épur
 Ouvrez le fichier `config.js` et indiquez votre numéro international sans espace ni '+' :
 ```javascript
 const APP_CONFIG = {
-  whatsappNumber: "33612345678", // Votre numéro WhatsApp
+  whatsappNumber: "237655752004", // Votre numéro WhatsApp (+237 6 55 75 20 04)
   ...
 };
 ```
