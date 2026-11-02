@@ -46,6 +46,11 @@
           </svg>
         </span>
         <span>Rendez-vous</span>
+        <span class="cm-tricolor-dot" title="Édition Cameroun 🇨🇲">
+          <span class="cm-dot green"></span>
+          <span class="cm-dot red"></span>
+          <span class="cm-dot yellow"></span>
+        </span>
       </div>
 
       <div class="nav-actions">
@@ -107,7 +112,7 @@
           ✨ Une invitation confidentielle
         </span>
 
-        <h1 class="step-title">Une petite question pour toi…</h1>
+        <h1 class="step-title">Une petite question pour toi, ma star… ❤️</h1>
         <p class="step-subtitle">
           J'ai imaginé une petite expérience sur mesure avant de te poser la vraie question…
         </p>
@@ -333,124 +338,178 @@
     <div id="step-3" class="wizard-step">
       <div class="luxury-card">
         <span class="badge-pill">
-          📍 Première décision
+          🇨🇲 Destination & Ambiance
         </span>
 
-        <h2 class="step-title">Super ! Alors, où aimerais-tu qu'on se voie ?</h2>
+        <h2 class="step-title">Où aimerais-tu qu'on se voie ?</h2>
         <p class="step-subtitle">
-          Choisis l'ambiance qui te ferait le plus plaisir pour ce premier moment :
+          Laisse notre générateur te surprendre ou explore les plus beaux spots du Cameroun :
         </p>
 
-        <div id="places-grid" class="selection-grid">
-          <!-- 1. Parc -->
-          <div class="choice-card" data-id="parc" data-title="Un joli parc">
-            <div class="choice-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1519331379826-f10be5486c6f?w=600&auto=format&fit=crop&q=80" alt="Parc romantique" class="choice-card-img" loading="lazy">
-              <span class="choice-card-badge">🌳 Nature</span>
-              <span class="choice-card-check">✓</span>
+        <!-- Toggle entre Mode Automatique et Mode Manuel -->
+        <div class="mode-toggle-tabs">
+          <button type="button" class="mode-tab-btn active" id="tab-mode-auto">
+            <span>🪄</span> Organise notre date
+          </button>
+          <button type="button" class="mode-tab-btn" id="tab-mode-manual">
+            <span>📍</span> Choisir par ville
+          </button>
+        </div>
+
+        <!-- VUE 1 : GÉNÉRATEUR AUTOMATIQUE « ORGANISE NOTRE DATE 🇨🇲 » -->
+        <div id="view-mode-auto" class="generator-view">
+          <div class="generator-controls-grid">
+            <div class="generator-select-wrap">
+              <label for="gen-city">🏙️ Ville au Cameroun :</label>
+              <select id="gen-city" class="generator-select">
+                <option value="Yaoundé" selected>Yaoundé</option>
+                <option value="Douala">Douala</option>
+                <option value="Kribi">Kribi</option>
+                <option value="Limbe">Limbe</option>
+                <option value="Bafoussam">Bafoussam</option>
+                <option value="Buea">Buea</option>
+                <option value="Bamenda">Bamenda</option>
+                <option value="Dschang">Dschang</option>
+                <option value="Garoua">Garoua</option>
+                <option value="Autre ville">Autre ville</option>
+              </select>
             </div>
-            <div class="choice-card-body">
-              <div class="choice-card-title">🌳 Un joli parc</div>
-              <div class="choice-card-desc">Un endroit tranquille pour parler, rire et apprendre à mieux se connaître.</div>
+
+            <div class="generator-select-wrap">
+              <label for="gen-style">🌹 Style de sortie :</label>
+              <select id="gen-style" class="generator-select">
+                <option value="Dîner intime" selected>Dîner intime en tête-à-tête</option>
+                <option value="Balade & gourmandise">Balade complice & pause gourmande</option>
+                <option value="Rooftop & vue">Rooftop & vue sous les étoiles</option>
+                <option value="Pause douceur">Pause douceur & confidences</option>
+              </select>
+            </div>
+
+            <div class="generator-select-wrap">
+              <label for="gen-mood">✨ Ambiance désirée :</label>
+              <select id="gen-mood" class="generator-select">
+                <option value="Romantique" selected>Romantique & douce</option>
+                <option value="Amusante">Amusante & complice</option>
+                <option value="Chic">Chic & élégante</option>
+                <option value="Gastronomique">Gastronomique & gourmande</option>
+                <option value="Aventure">Aventure & découverte</option>
+                <option value="Détente">Détente & posée</option>
+              </select>
+            </div>
+
+            <div class="generator-select-wrap">
+              <label for="gen-moment">🌅 Moment idéal :</label>
+              <select id="gen-moment" class="generator-select">
+                <option value="Matin">Matinée ensoleillée</option>
+                <option value="Après-midi">Après-midi détendue</option>
+                <option value="Soirée" selected>Soirée sous les étoiles</option>
+              </select>
             </div>
           </div>
 
-          <!-- 2. Restaurant Chic -->
-          <div class="choice-card" data-id="restaurant" data-title="Un restaurant chic">
-            <div class="choice-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&auto=format&fit=crop&q=80" alt="Restaurant chic" class="choice-card-img" loading="lazy">
-              <span class="choice-card-badge">🍽️ Gourmand</span>
-              <span class="choice-card-check">✓</span>
-            </div>
-            <div class="choice-card-body">
-              <div class="choice-card-title">🍽️ Un restaurant chic</div>
-              <div class="choice-card-desc">Un restaurant chic, parce que tu mérites le meilleur.</div>
-            </div>
-          </div>
+          <button type="button" id="btn-run-generator" class="btn-generate-action">
+            <span>Organiser notre rendez-vous</span>
+            <span>❤️</span>
+          </button>
 
-          <!-- 3. Piscine -->
-          <div class="choice-card" data-id="piscine" data-title="Une piscine">
-            <div class="choice-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=600&auto=format&fit=crop&q=80" alt="Piscine détente" class="choice-card-img" loading="lazy">
-              <span class="choice-card-badge">🏊 Soleil</span>
-              <span class="choice-card-check">✓</span>
+          <!-- Carte de Résultat de la Proposition Générée -->
+          <div id="date-proposal-card" class="date-proposal-card">
+            <div class="proposal-header">
+              <span class="proposal-badge">🇨🇲 Rendez-vous sur mesure</span>
+              <span class="proposal-city-tag" id="proposal-city-tag">Yaoundé</span>
             </div>
-            <div class="choice-card-body">
-              <div class="choice-card-title">🏊 Une piscine</div>
-              <div class="choice-card-desc">Une piscine, du soleil et une bonne compagnie.</div>
-            </div>
-          </div>
 
-          <!-- 4. Café élégant -->
-          <div class="choice-card" data-id="cafe" data-title="Un café élégant">
-            <div class="choice-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&auto=format&fit=crop&q=80" alt="Café élégant" class="choice-card-img" loading="lazy">
-              <span class="choice-card-badge">☕ Douceur</span>
-              <span class="choice-card-check">✓</span>
-            </div>
-            <div class="choice-card-body">
-              <div class="choice-card-title">☕ Un café élégant</div>
-              <div class="choice-card-desc">Café chaud, douceurs et regards complices.</div>
-            </div>
-          </div>
+            <div class="proposal-grid-details">
+              <div class="proposal-row-item">
+                <span class="proposal-icon">📍</span>
+                <div>
+                  <div class="proposal-info-title">Lieu suggéré</div>
+                  <div class="proposal-info-value" id="proposal-place">—</div>
+                </div>
+              </div>
 
-          <!-- 5. Rooftop -->
-          <div class="choice-card" data-id="rooftop" data-title="Un rooftop avec vue">
-            <div class="choice-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=600&auto=format&fit=crop&q=80" alt="Rooftop vue panoramique" class="choice-card-img" loading="lazy">
-              <span class="choice-card-badge">🌇 Panoramique</span>
-              <span class="choice-card-check">✓</span>
-            </div>
-            <div class="choice-card-body">
-              <div class="choice-card-title">🌇 Un rooftop vue magique</div>
-              <div class="choice-card-desc">Les lumières de la ville et une vue magique sous les étoiles.</div>
-            </div>
-          </div>
+              <div class="proposal-row-item">
+                <span class="proposal-icon">🍲</span>
+                <div>
+                  <div class="proposal-info-title">Au menu</div>
+                  <div class="proposal-info-value" id="proposal-food">—</div>
+                </div>
+              </div>
 
-          <!-- 6. Cinéma -->
-          <div class="choice-card" data-id="cinema" data-title="Un cinéma">
-            <div class="choice-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&auto=format&fit=crop&q=80" alt="Cinéma cosy" class="choice-card-img" loading="lazy">
-              <span class="choice-card-badge">🎬 Popcorn</span>
-              <span class="choice-card-check">✓</span>
-            </div>
-            <div class="choice-card-body">
-              <div class="choice-card-title">🎬 Un cinéma</div>
-              <div class="choice-card-desc">Popcorn partagé et ambiance feutrée dans les fauteuils moelleux.</div>
-            </div>
-          </div>
+              <div class="proposal-row-item">
+                <span class="proposal-icon">🥤</span>
+                <div>
+                  <div class="proposal-info-title">Boisson</div>
+                  <div class="proposal-info-value" id="proposal-drink">—</div>
+                </div>
+              </div>
 
-          <!-- 7. Balade coucher de soleil -->
-          <div class="choice-card" data-id="coucher-soleil" data-title="Balade coucher de soleil">
-            <div class="choice-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=80" alt="Coucher de soleil" class="choice-card-img" loading="lazy">
-              <span class="choice-card-badge">🌅 Romantique</span>
-              <span class="choice-card-check">✓</span>
-            </div>
-            <div class="choice-card-body">
-              <div class="choice-card-title">🌅 Balade au coucher de soleil</div>
-              <div class="choice-card-desc">Des couleurs dorées et une atmosphère magique rien qu'à nous.</div>
-            </div>
-          </div>
+              <div class="proposal-row-item">
+                <span class="proposal-icon">✨</span>
+                <div>
+                  <div class="proposal-info-title">Activité complice</div>
+                  <div class="proposal-info-value" id="proposal-activity">—</div>
+                </div>
+              </div>
 
-          <!-- 8. Autre endroit -->
-          <div class="choice-card" data-id="autre" data-title="Autre endroit de ton choix">
-            <div class="choice-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=600&auto=format&fit=crop&q=80" alt="Endroit magique" class="choice-card-img" loading="lazy">
-              <span class="choice-card-badge">✨ Surprise</span>
-              <span class="choice-card-check">✓</span>
+              <div class="proposal-row-item">
+                <span class="proposal-icon">🎁</span>
+                <div>
+                  <div class="proposal-info-title">Petite attention</div>
+                  <div class="proposal-info-value" id="proposal-gift">—</div>
+                </div>
+              </div>
             </div>
-            <div class="choice-card-body">
-              <div class="choice-card-title">✨ Un autre endroit</div>
-              <div class="choice-card-desc">Un lieu secret ou ton spot préféré à la fac ou en ville.</div>
+
+            <div class="proposal-message-quote" id="proposal-message">
+              « Le programme est calé pour un moment inoubliable ! ❤️ »
+            </div>
+
+            <div class="proposal-actions-row">
+              <button type="button" id="btn-regen-proposal" class="btn-regen">
+                <span>🔄 Générer une autre idée</span>
+              </button>
+              <button type="button" id="btn-apply-proposal" class="btn-apply-proposal">
+                <span>Ajouter ce programme</span>
+                <span>💌</span>
+              </button>
             </div>
           </div>
         </div>
 
-        <!-- Saisie pour endroit personnalisé -->
-        <div id="custom-place-box" class="custom-input-box">
-          <label for="custom-place-input" class="input-label">Dis-moi où tu aimerais qu'on aille :</label>
-          <input type="text" id="custom-place-input" class="custom-input" placeholder="Ex: Mon café préféré, une plage, etc.">
+        <!-- VUE 2 : CHOIX MANUEL PAR VILLE -->
+        <div id="view-mode-manual" class="generator-view" style="display: none;">
+          <div class="city-selector-section">
+            <label class="input-label" style="margin-bottom: 8px;">
+              <span>🇨🇲</span> Choisis la ville :
+            </label>
+            <div class="city-pills-scroll" id="city-pills-container">
+              <button type="button" class="city-pill active" data-city="Yaoundé"><span>🏛️</span> Yaoundé</button>
+              <button type="button" class="city-pill" data-city="Douala"><span>🌊</span> Douala</button>
+              <button type="button" class="city-pill" data-city="Kribi"><span>🌅</span> Kribi</button>
+              <button type="button" class="city-pill" data-city="Limbe"><span>🏖️</span> Limbe</button>
+              <button type="button" class="city-pill" data-city="Bafoussam"><span>⛰️</span> Bafoussam</button>
+              <button type="button" class="city-pill" data-city="Buea"><span>🌋</span> Buea</button>
+              <button type="button" class="city-pill" data-city="Bamenda"><span>🌿</span> Bamenda</button>
+              <button type="button" class="city-pill" data-city="Dschang"><span>🌸</span> Dschang</button>
+              <button type="button" class="city-pill" data-city="Garoua"><span>☀️</span> Garoua</button>
+              <button type="button" class="city-pill" data-city="Maroua"><span>🌴</span> Maroua</button>
+              <button type="button" class="city-pill" data-city="Autre ville"><span>✨</span> Autre ville</button>
+            </div>
+          </div>
+
+          <p class="step-subtitle" id="places-subtitle" style="margin-bottom: 16px;">
+            Les plus beaux spots à <strong id="current-city-label">Yaoundé</strong> :
+          </p>
+
+          <div id="places-grid" class="selection-grid">
+            <!-- Injecté dynamiquement par app.js -->
+          </div>
+
+          <div id="custom-place-box" class="custom-input-box">
+            <label for="custom-place-input" class="input-label">Dis-moi où tu aimerais qu'on aille :</label>
+            <input type="text" id="custom-place-input" class="custom-input" placeholder="Ex: Mon café préféré, une plage, etc.">
+          </div>
         </div>
 
         <div class="wizard-nav">
@@ -466,148 +525,391 @@
     </div>
 
     <!-- ====================================================================
-         ÉTAPE 4 : QUATRIÈME PAGE — CHOIX DE LA NOURRITURE
+         ÉTAPE 4 : QUATRIÈME PAGE — CHOIX DE LA NOURRITURE & BOISSONS 🇨🇲
          ==================================================================== -->
     <div id="step-4" class="wizard-step">
       <div class="luxury-card">
         <span class="badge-pill">
-          🍴 Les papilles en fête
+          🍴 Les papilles en fête au Mboa
         </span>
 
         <h2 class="step-title">Maintenant, parlons de la partie la plus importante… Qu'est-ce qu'on mange ? 😋</h2>
         
         <div class="humor-note">
           <span>😂</span>
-          <span>Attention, ton choix peut influencer mon humeur pendant les 5 prochaines minutes.</span>
+          <span>Attention, ton choix peut influencer mon humeur pendant les 5 prochaines minutes. Le ndolé n'attend pas !</span>
         </div>
+
+        <!-- Onglets Catégories Cuisine -->
+        <div class="food-tabs-container">
+          <button type="button" class="food-tab-btn active" id="tab-food-cameroon">
+            <span>🇨🇲</span> Nos saveurs du Cameroun
+          </button>
+          <button type="button" class="food-tab-btn" id="tab-food-international">
+            <span>🌍</span> Cuisine internationale
+          </button>
+        </div>
+
+        <!-- Bouton Surprise Menu -->
+        <button type="button" id="btn-surprise-food" class="btn-surprise-menu">
+          <span>🎲 Surprise, choisis pour moi !</span>
+        </button>
 
         <p class="step-subtitle">
           (Tu peux sélectionner <strong>plusieurs choix</strong> sans hésitation !)
         </p>
 
-        <div id="food-grid" class="selection-grid">
-          <!-- 1. Sushi -->
-          <div class="choice-card" data-id="sushi" data-title="Sushi">
+        <!-- GRILLE 1 : SAVEURS DU CAMEROUN -->
+        <div id="food-cameroon-grid" class="selection-grid">
+          <div class="choice-card" data-id="ndole" data-title="Ndolé avec miondo ou plantain">
             <div class="choice-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&auto=format&fit=crop&q=80" alt="Sushi" class="choice-card-img" loading="lazy">
-              <span class="choice-card-badge">🍣 Frais</span>
+              <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80" alt="Ndolé" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🇨🇲 Roi du Mboa</span>
               <span class="choice-card-check">✓</span>
             </div>
             <div class="choice-card-body">
-              <div class="choice-card-title">🍣 Sushi</div>
-              <div class="choice-card-desc">Frais, raffiné et parfait pour papoter.</div>
+              <div class="choice-card-title">🍲 Ndolé avec miondo ou plantain</div>
+              <div class="choice-card-desc">Le plat national légendaire, crevettes, viande tendre et miondo chaud.</div>
             </div>
           </div>
 
-          <!-- 2. Pâtes italiennes -->
-          <div class="choice-card" data-id="pates" data-title="Pâtes italiennes">
+          <div class="choice-card" data-id="poulet-dg" data-title="Poulet DG">
             <div class="choice-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=600&auto=format&fit=crop&q=80" alt="Pâtes italiennes" class="choice-card-img" loading="lazy">
-              <span class="choice-card-badge">🍝 Dolce Vita</span>
+              <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&auto=format&fit=crop&q=80" alt="Poulet DG" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">👑 Directeur Général</span>
               <span class="choice-card-check">✓</span>
             </div>
             <div class="choice-card-body">
-              <div class="choice-card-title">🍝 Pâtes italiennes</div>
-              <div class="choice-card-desc">Ambiance La Belle et le Clochard assurée.</div>
+              <div class="choice-card-title">🍗 Poulet DG</div>
+              <div class="choice-card-desc">Plantains frits dorés, légumes croquants et poulet mijoté avec amour.</div>
             </div>
           </div>
 
-          <!-- 3. Pizza -->
+          <div class="choice-card" data-id="poisson-braise-miondo" data-title="Poisson braisé avec bâton de manioc">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&auto=format&fit=crop&q=80" alt="Poisson braisé" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🐟 Incontournable</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🐟 Poisson braisé & miondo</div>
+              <div class="choice-card-desc">Bar ou carpe braisée aux épices du pays, piment doux et bâton de manioc.</div>
+            </div>
+          </div>
+
+          <div class="choice-card" data-id="poisson-braise-plantain" data-title="Poisson braisé avec plantain">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&auto=format&fit=crop&q=80" alt="Poisson braisé plantain" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🍌 Gourmandise</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🐟 Poisson braisé & plantain</div>
+              <div class="choice-card-desc">Poisson tendre et croustillant accompagné d'allocos bien dorés.</div>
+            </div>
+          </div>
+
+          <div class="choice-card" data-id="soya" data-title="Soya">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&auto=format&fit=crop&q=80" alt="Soya" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🥩 Kan-kan</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🥩 Soya bien assaisonné</div>
+              <div class="choice-card-desc">Brochettes de bœuf grillées au feu de bois, oignons frais et épices kan-kan.</div>
+            </div>
+          </div>
+
+          <div class="choice-card" data-id="eru" data-title="Eru avec water fufu">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&auto=format&fit=crop&q=80" alt="Eru" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🌿 Spécialité</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🌿 Eru avec water fufu</div>
+              <div class="choice-card-desc">Légumes sauvages et peau de bœuf fondante au goût fumé inimitable.</div>
+            </div>
+          </div>
+
+          <div class="choice-card" data-id="koki" data-title="Koki avec plantain">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=600&auto=format&fit=crop&q=80" alt="Koki" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🟡 Douceur dorée</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🟡 Koki avec plantain</div>
+              <div class="choice-card-desc">Gâteau de haricots moelleux à l'huile de palme, réconfortant et généreux.</div>
+            </div>
+          </div>
+
+          <div class="choice-card" data-id="achu" data-title="Achu et sauce jaune">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&auto=format&fit=crop&q=80" alt="Achu" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🥣 Tradition Ouest</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🥣 Achu et sauce jaune</div>
+              <div class="choice-card-desc">Sauce jaune savoureuse aux épices traditionnelles et taro pilé.</div>
+            </div>
+          </div>
+
+          <div class="choice-card" data-id="taro" data-title="Taro sauce jaune">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&auto=format&fit=crop&q=80" alt="Taro sauce jaune" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">👑 Saveur noble</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🥣 Taro sauce jaune</div>
+              <div class="choice-card-desc">Le délice emblématique des grandes réceptions familiales.</div>
+            </div>
+          </div>
+
+          <div class="choice-card" data-id="kondre" data-title="Kondré">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=600&auto=format&fit=crop&q=80" alt="Kondré" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🍲 Mijoté</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🍲 Kondré</div>
+              <div class="choice-card-desc">Mijoté traditionnel de plantains et viande aux aromates parfumés.</div>
+            </div>
+          </div>
+
+          <div class="choice-card" data-id="mbongo" data-title="Mbongo tchobi">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&auto=format&fit=crop&q=80" alt="Mbongo tchobi" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🖤 Sauce ébène</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🖤 Mbongo tchobi</div>
+              <div class="choice-card-desc">Sauce noire veloutée aux épices boisées de la forêt camerounaise.</div>
+            </div>
+          </div>
+
+          <div class="choice-card" data-id="okok" data-title="Okok">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&auto=format&fit=crop&q=80" alt="Okok" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🌿 Douceur</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🌿 Okok sucré</div>
+              <div class="choice-card-desc">Feuilles finement émincées mijotées à la pâte d'arachide et huile de palme.</div>
+            </div>
+          </div>
+
+          <div class="choice-card" data-id="poulet-roti" data-title="Poulet rôti">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=600&auto=format&fit=crop&q=80" alt="Poulet rôti" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🍗 Croustillant</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🍗 Poulet rôti camerounais</div>
+              <div class="choice-card-desc">Mariné au djansang et herbes locales, rôti à la perfection.</div>
+            </div>
+          </div>
+
+          <div class="choice-card" data-id="porc-braise" data-title="Porc braisé">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80" alt="Porc braisé" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🥩 Savoureux</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🥩 Porc braisé</div>
+              <div class="choice-card-desc">Morceaux tendres braisés avec du piment frais et des plantains.</div>
+            </div>
+          </div>
+
+          <div class="choice-card" data-id="plantain-haricots" data-title="Plantain mûr et haricots">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=600&auto=format&fit=crop&q=80" alt="Plantain haricots" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🍌 Classique</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🍌 Plantain mûr & haricots</div>
+              <div class="choice-card-desc">Plantains frits sucrés et haricots rouges mijotés à la camerounaise.</div>
+            </div>
+          </div>
+
+          <div class="choice-card" data-id="riz-saute" data-title="Riz sauté au poisson ou au poulet">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600&auto=format&fit=crop&q=80" alt="Riz sauté" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🍚 Parfumé</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🍚 Riz sauté au poisson/poulet</div>
+              <div class="choice-card-desc">Riz parfumé aux petits légumes croquants et morceaux braisés.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GRILLE 2 : CUISINE INTERNATIONALE -->
+        <div id="food-intl-grid" class="selection-grid" style="display: none;">
           <div class="choice-card" data-id="pizza" data-title="Pizza">
             <div class="choice-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&auto=format&fit=crop&q=80" alt="Pizza artisanale" class="choice-card-img" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&auto=format&fit=crop&q=80" alt="Pizza" class="choice-card-img" loading="lazy">
               <span class="choice-card-badge">🍕 Indémodable</span>
               <span class="choice-card-check">✓</span>
             </div>
             <div class="choice-card-body">
-              <div class="choice-card-title">🍕 Pizza croustillante</div>
+              <div class="choice-card-title">🍕 Pizza artisanale</div>
               <div class="choice-card-desc">Fromage fondant et bonne humeur partagée.</div>
             </div>
           </div>
 
-          <!-- 4. Burger gourmet -->
-          <div class="choice-card" data-id="burger" data-title="Burger gourmet">
+          <div class="choice-card" data-id="spaghetti" data-title="Spaghetti">
             <div class="choice-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&auto=format&fit=crop&q=80" alt="Burger gourmet" class="choice-card-img" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=600&auto=format&fit=crop&q=80" alt="Spaghetti" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🍝 Dolce Vita</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🍝 Spaghetti / Pâtes italiennes</div>
+              <div class="choice-card-desc">Ambiance romantique et sauces faites maison.</div>
+            </div>
+          </div>
+
+          <div class="choice-card" data-id="sushi" data-title="Sushi">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&auto=format&fit=crop&q=80" alt="Sushi" class="choice-card-img" loading="lazy">
+              <span class="choice-card-badge">🍣 Raffiné</span>
+              <span class="choice-card-check">✓</span>
+            </div>
+            <div class="choice-card-body">
+              <div class="choice-card-title">🍣 Sushi frais</div>
+              <div class="choice-card-desc">Léger, raffiné et parfait pour un dîner intimiste.</div>
+            </div>
+          </div>
+
+          <div class="choice-card" data-id="burger" data-title="Burger">
+            <div class="choice-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&auto=format&fit=crop&q=80" alt="Burger" class="choice-card-img" loading="lazy">
               <span class="choice-card-badge">🍔 Gourmandise</span>
               <span class="choice-card-check">✓</span>
             </div>
             <div class="choice-card-body">
               <div class="choice-card-title">🍔 Burger gourmet</div>
-              <div class="choice-card-desc">Généreux, frites dorées et zéro culpabilité.</div>
+              <div class="choice-card-desc">Généreux avec frites dorées et sauces spéciales.</div>
             </div>
           </div>
 
-          <!-- 5. Grillades -->
           <div class="choice-card" data-id="grillades" data-title="Grillades">
             <div class="choice-card-img-wrap">
               <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80" alt="Grillades" class="choice-card-img" loading="lazy">
-              <span class="choice-card-badge">🥩 Savoureux</span>
+              <span class="choice-card-badge">🥩 Braisé</span>
               <span class="choice-card-check">✓</span>
             </div>
             <div class="choice-card-body">
-              <div class="choice-card-title">🥩 Grillades</div>
-              <div class="choice-card-desc">Viande tendre, épices et saveurs braisées.</div>
+              <div class="choice-card-title">🥩 Grillades internationales</div>
+              <div class="choice-card-desc">Steak tendre, ribs ou brochettes savoureuses.</div>
             </div>
           </div>
 
-          <!-- 6. Poulet accompagné -->
-          <div class="choice-card" data-id="poulet" data-title="Poulet accompagné">
+          <div class="choice-card" data-id="dessert" data-title="Desserts">
             <div class="choice-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&auto=format&fit=crop&q=80" alt="Poulet accompagné" class="choice-card-img" loading="lazy">
-              <span class="choice-card-badge">🍗 Croustillant</span>
-              <span class="choice-card-check">✓</span>
-            </div>
-            <div class="choice-card-body">
-              <div class="choice-card-title">🍗 Poulet bien assaisonné</div>
-              <div class="choice-card-desc">Accompagné d'allocos, riz parfumé ou frites.</div>
-            </div>
-          </div>
-
-          <!-- 7. Gâteau et desserts -->
-          <div class="choice-card" data-id="dessert" data-title="Gâteau & Desserts">
-            <div class="choice-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&auto=format&fit=crop&q=80" alt="Gâteau et desserts" class="choice-card-img" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&auto=format&fit=crop&q=80" alt="Desserts" class="choice-card-img" loading="lazy">
               <span class="choice-card-badge">🍰 Douceur</span>
               <span class="choice-card-check">✓</span>
             </div>
             <div class="choice-card-body">
-              <div class="choice-card-title">🍰 Gâteau & Desserts</div>
-              <div class="choice-card-desc">Une part sucrée pour les gourmandes.</div>
-            </div>
-          </div>
-
-          <!-- 8. Chocolat -->
-          <div class="choice-card" data-id="chocolat" data-title="Chocolat">
-            <div class="choice-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=600&auto=format&fit=crop&q=80" alt="Chocolat chaud et douceurs" class="choice-card-img" loading="lazy">
-              <span class="choice-card-badge">🍫 Plaisir</span>
-              <span class="choice-card-check">✓</span>
-            </div>
-            <div class="choice-card-body">
-              <div class="choice-card-title">🍫 Chocolat fondant</div>
-              <div class="choice-card-desc">Parce que le chocolat rend tout meilleur.</div>
-            </div>
-          </div>
-
-          <!-- 9. Autre idée -->
-          <div class="choice-card" data-id="autre-food" data-title="Une autre idée">
-            <div class="choice-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&auto=format&fit=crop&q=80" alt="Autre envie" class="choice-card-img" loading="lazy">
-              <span class="choice-card-badge">🥂 Surprise</span>
-              <span class="choice-card-check">✓</span>
-            </div>
-            <div class="choice-card-body">
-              <div class="choice-card-title">🥂 Une autre idée</div>
-              <div class="choice-card-desc">Une envie spontanée ou ton péché mignon.</div>
+              <div class="choice-card-title">🍰 Desserts & Pâtisserie</div>
+              <div class="choice-card-desc">Gâteau fondant, tartes et douceurs sucrées.</div>
             </div>
           </div>
         </div>
 
-        <!-- Champ facultatif pour autre envie -->
+        <!-- Champ facultatif pour autre envie de nourriture -->
         <div class="input-group" style="margin-bottom: 22px;">
           <label for="custom-food-input" class="input-label">Tu as une autre envie ? Dis-moi tout…</label>
           <input type="text" id="custom-food-input" class="custom-input" placeholder="Ex: Tacos, Glace, Street-food, etc.">
+        </div>
+
+        <!-- SECTION BOISSONS DU CAMEROUN -->
+        <div class="drinks-section">
+          <label class="input-label" style="margin-bottom: 12px; font-size: 1rem;">
+            <span>🥤</span> Et qu'est-ce qu'on boit de bon ? (Boissons rafraîchissantes)
+          </label>
+          <div id="drinks-grid" class="drinks-grid">
+            <div class="drink-card" data-drink="Jus de foléré">
+              <div class="drink-card-left">
+                <span class="drink-icon">🌺</span>
+                <span class="drink-name">Jus de foléré</span>
+              </div>
+              <span class="drink-check">✓</span>
+            </div>
+
+            <div class="drink-card" data-drink="Jus de gingembre">
+              <div class="drink-card-left">
+                <span class="drink-icon">🫚</span>
+                <span class="drink-name">Jus de gingembre</span>
+              </div>
+              <span class="drink-check">✓</span>
+            </div>
+
+            <div class="drink-card" data-drink="Jus de baobab">
+              <div class="drink-card-left">
+                <span class="drink-icon">🥛</span>
+                <span class="drink-name">Jus de baobab</span>
+              </div>
+              <span class="drink-check">✓</span>
+            </div>
+
+            <div class="drink-card" data-drink="Jus d'ananas naturel">
+              <div class="drink-card-left">
+                <span class="drink-icon">🍍</span>
+                <span class="drink-name">Jus d'ananas naturel</span>
+              </div>
+              <span class="drink-check">✓</span>
+            </div>
+
+            <div class="drink-card" data-drink="Jus de bissap">
+              <div class="drink-card-left">
+                <span class="drink-icon">🍷</span>
+                <span class="drink-name">Jus de bissap</span>
+              </div>
+              <span class="drink-check">✓</span>
+            </div>
+
+            <div class="drink-card" data-drink="Cocktail sans alcool">
+              <div class="drink-card-left">
+                <span class="drink-icon">🍹</span>
+                <span class="drink-name">Cocktail sans alcool</span>
+              </div>
+              <span class="drink-check">✓</span>
+            </div>
+
+            <div class="drink-card" data-drink="Eau minérale">
+              <div class="drink-card-left">
+                <span class="drink-icon">💧</span>
+                <span class="drink-name">Eau minérale (Supermont)</span>
+              </div>
+              <span class="drink-check">✓</span>
+            </div>
+
+            <div class="drink-card" data-drink="Autre boisson">
+              <div class="drink-card-left">
+                <span class="drink-icon">✨</span>
+                <span class="drink-name">Autre boisson</span>
+              </div>
+              <span class="drink-check">✓</span>
+            </div>
+          </div>
+
+          <div id="custom-drink-box" class="custom-input-box">
+            <label for="custom-drink-input" class="input-label">Précise ta boisson préférée :</label>
+            <input type="text" id="custom-drink-input" class="custom-input" placeholder="Ex: Smoothie mangue, mocktail menthe, etc.">
+          </div>
         </div>
 
         <div class="wizard-nav">
@@ -623,55 +925,51 @@
     </div>
 
     <!-- ====================================================================
-         ÉTAPE 4-B : LA BOÎTE À SURPRISES (3 BOÎTES MYSTÉRIEUSES)
+         ÉTAPE 4-B : LA BOÎTE À SURPRISE UNIQUE 🎁 (UNE SEULE SURPRISE)
          ==================================================================== -->
     <div id="step-surprises" class="wizard-step">
       <div class="luxury-card">
         <span class="badge-pill">
-          🎁 Petites attentions mystères
+          🎁 Une petite attention rien que pour toi
         </span>
 
-        <h2 class="step-title">J'ai quelques surprises pour toi…</h2>
+        <h2 class="step-title">J'ai quelque chose de spécial pour toi… ❤️</h2>
         <p class="step-subtitle">
-          Touche une boîte pour l'ouvrir (ou ouvre-les toutes si tu es trop curieuse !) :
+          Touche la boîte pour déballer ta surprise :
         </p>
 
-        <div class="gift-boxes-grid">
-          <!-- Boîte 1 -->
-          <div class="gift-box-card" id="gift-box-1" data-id="1">
-            <span class="gift-box-icon">🎁</span>
-            <span class="gift-box-name">Boîte Rose Poudré</span>
-            <div class="gift-box-content">
-              Une glace offerte pendant notre rendez-vous. 🍦
+        <div class="single-surprise-wrap">
+          <div class="luxury-single-gift" id="single-gift-box">
+            <div class="gift-lid">
+              <span class="gift-ribbon-bow">🎀</span>
             </div>
+            <div class="gift-base"></div>
           </div>
 
-          <!-- Boîte 2 -->
-          <div class="gift-box-card" id="gift-box-2" data-id="2">
-            <span class="gift-box-icon">🎁</span>
-            <span class="gift-box-name">Boîte Dorée</span>
-            <div class="gift-box-content">
-              Le droit de choisir notre prochaine destination. 🌍
-            </div>
-          </div>
+          <button type="button" id="btn-open-single-gift" class="btn-primary" style="max-width: 280px;">
+            <span>Ouvrir ma surprise</span>
+            <span>🎁</span>
+          </button>
 
-          <!-- Boîte 3 -->
-          <div class="gift-box-card" id="gift-box-3" data-id="3">
-            <span class="gift-box-icon">🎁</span>
-            <span class="gift-box-name">Boîte Rouge Rubis</span>
-            <div class="gift-box-content">
-              Une surprise que je préfère te révéler en personne. 🤫❤️
+          <div id="surprise-revealed-card" class="surprise-revealed-card">
+            <span class="surprise-revealed-badge">✨ Spécialement pour toi</span>
+            <p class="surprise-revealed-text">
+              « Surprise ! ❤️ <span class="user-name-target">Ma star</span>, je voulais simplement te rappeler que tu mérites de beaux moments, de beaux sourires et beaucoup d'attention. Et si on commençait par un joli rendez-vous ensemble ? »
+            </p>
+            <div class="surprise-extra-treat">
+              <span>🍦</span>
+              <span>Une glace ou douceur offerte pendant notre rendez-vous !</span>
             </div>
+            <button type="button" id="btn-continue-surprises" class="btn-primary" style="margin-top: 8px;">
+              <span>Continuer vers les petits plus</span>
+              <span>✨</span>
+            </button>
           </div>
         </div>
 
-        <div class="wizard-nav">
+        <div class="wizard-nav" style="margin-top: 10px;">
           <button type="button" id="btn-back-step-surprises" class="btn-back">
             <span>← Précédent</span>
-          </button>
-          <button type="button" id="btn-continue-surprises" class="btn-primary">
-            <span>Découvrir les petits plus</span>
-            <span>✨</span>
           </button>
         </div>
       </div>
@@ -679,44 +977,20 @@
     <div id="step-5" class="wizard-step">
       <div class="luxury-card">
         <span class="badge-pill">
-          ✨ Les petites attentions
+          ✨ Les petites attentions & Ambiance
         </span>
 
         <h2 class="step-title">On rend ce rendez-vous encore plus spécial ? ✨</h2>
         <p class="step-subtitle">
-          Sélectionne ce qui ferait chavirer ton cœur :
+          Sélectionne l'ambiance et les activités qui te feraient plaisir :
         </p>
 
-        <!-- Liste des extras -->
+        <!-- Liste des activités et expériences camerounaises -->
         <div id="extras-list" class="extras-list">
-          <div class="extra-item" data-id="surprise">
+          <div class="extra-item" data-id="poisson">
             <div class="extra-item-left">
-              <span class="extra-icon">🌹</span>
-              <span class="extra-label">Une petite surprise</span>
-            </div>
-            <span class="extra-checkbox">✓</span>
-          </div>
-
-          <div class="extra-item" data-id="playlist">
-            <div class="extra-item-left">
-              <span class="extra-icon">🎶</span>
-              <span class="extra-label">Une playlist spéciale</span>
-            </div>
-            <span class="extra-checkbox">✓</span>
-          </div>
-
-          <div class="extra-item" data-id="promenade">
-            <div class="extra-item-left">
-              <span class="extra-icon">🌅</span>
-              <span class="extra-label">Une promenade au coucher du soleil</span>
-            </div>
-            <span class="extra-checkbox">✓</span>
-          </div>
-
-          <div class="extra-item" data-id="photos">
-            <div class="extra-item-left">
-              <span class="extra-icon">📸</span>
-              <span class="extra-label">Quelques jolies photos ensemble</span>
+              <span class="extra-icon">🐟</span>
+              <span class="extra-label">Dégustation de poisson braisé</span>
             </div>
             <span class="extra-checkbox">✓</span>
           </div>
@@ -724,26 +998,82 @@
           <div class="extra-item" data-id="glace">
             <div class="extra-item-left">
               <span class="extra-icon">🍦</span>
-              <span class="extra-label">Une glace après le repas</span>
+              <span class="extra-label">Sortie glace et promenade</span>
             </div>
             <span class="extra-checkbox">✓</span>
           </div>
 
-          <div class="extra-item" data-id="cadeau">
+          <div class="extra-item" data-id="musique">
             <div class="extra-item-left">
-              <span class="extra-icon">🎁</span>
-              <span class="extra-label">Un petit cadeau surprise</span>
+              <span class="extra-icon">🎶</span>
+              <span class="extra-label">Soirée restaurant avec musique douce</span>
             </div>
             <span class="extra-checkbox">✓</span>
           </div>
 
-          <div class="extra-item" data-id="discussion">
+          <div class="extra-item" data-id="plage">
             <div class="extra-item-left">
-              <span class="extra-icon">💬</span>
-              <span class="extra-label">Un moment pour discuter de tout et de rien</span>
+              <span class="extra-icon">🌊</span>
+              <span class="extra-label">Balade au bord de la plage / de l'eau</span>
             </div>
             <span class="extra-checkbox">✓</span>
           </div>
+
+          <div class="extra-item" data-id="coucher-soleil">
+            <div class="extra-item-left">
+              <span class="extra-icon">🌅</span>
+              <span class="extra-label">Coucher de soleil à deux</span>
+            </div>
+            <span class="extra-checkbox">✓</span>
+          </div>
+
+          <div class="extra-item" data-id="snack">
+            <div class="extra-item-left">
+              <span class="extra-icon">🥪</span>
+              <span class="extra-label">Petite sortie au snack</span>
+            </div>
+            <span class="extra-checkbox">✓</span>
+          </div>
+
+          <div class="extra-item" data-id="photos">
+            <div class="extra-item-left">
+              <span class="extra-icon">📸</span>
+              <span class="extra-label">Séance photo romantique ensemble</span>
+            </div>
+            <span class="extra-checkbox">✓</span>
+          </div>
+
+          <div class="extra-item" data-id="resto-local">
+            <div class="extra-item-left">
+              <span class="extra-icon">🍲</span>
+              <span class="extra-label">Découverte d'un restaurant local</span>
+            </div>
+            <span class="extra-checkbox">✓</span>
+          </div>
+
+          <div class="extra-item" data-id="cinema">
+            <div class="extra-item-left">
+              <span class="extra-icon">🎬</span>
+              <span class="extra-label">Soirée cinéma cosy</span>
+            </div>
+            <span class="extra-checkbox">✓</span>
+          </div>
+
+          <div class="extra-item" data-id="surprise-romantique">
+            <div class="extra-item-left">
+              <span class="extra-icon">🌹</span>
+              <span class="extra-label">Surprise romantique secrète</span>
+            </div>
+            <span class="extra-checkbox">✓</span>
+          </div>
+        </div>
+
+        <!-- Bannière d'invitation 100% offerte avec élégance -->
+        <div class="invitation-complimentary-banner">
+          <span class="invitation-banner-icon">💌✨</span>
+          <p class="invitation-banner-text">
+            « Ce rendez-vous est mon invitation. Toi, viens simplement avec ton sourire. ❤️ »
+          </p>
         </div>
 
         <!-- Moment préféré -->
@@ -765,10 +1095,16 @@
           </div>
         </div>
 
-        <!-- Date souhaitée -->
-        <div class="input-group">
-          <label for="date-picker-input" class="input-label">Tu as une date en tête ?</label>
-          <input type="date" id="date-picker-input" class="custom-input">
+        <!-- Date & Heure souhaitées -->
+        <div class="time-picker-row">
+          <div class="input-group">
+            <label for="date-picker-input" class="input-label">Date en tête :</label>
+            <input type="date" id="date-picker-input" class="custom-input">
+          </div>
+          <div class="input-group">
+            <label for="time-picker-input" class="input-label">Heure idéale :</label>
+            <input type="time" id="time-picker-input" class="custom-input" value="18:30">
+          </div>
         </div>
 
         <!-- Message libre -->
@@ -778,7 +1114,7 @@
         </div>
 
         <div class="romantic-quote">
-          « Promis, je ferai de mon mieux pour que tu passes un bon moment. ❤️ »
+          « Le programme est calé ! Promis, on va gérer ça proprement. ❤️ »
         </div>
 
         <div class="wizard-nav">
@@ -910,8 +1246,16 @@
 
           <div class="recap-row">
             <div class="recap-label">
+              <span>🇨🇲</span>
+              <span>Ville choisie</span>
+            </div>
+            <div id="recap-city" class="recap-value">—</div>
+          </div>
+
+          <div class="recap-row">
+            <div class="recap-label">
               <span>📍</span>
-              <span>Lieu choisi</span>
+              <span>Lieu du rendez-vous</span>
             </div>
             <div id="recap-place" class="recap-value">—</div>
           </div>
@@ -926,8 +1270,16 @@
 
           <div class="recap-row">
             <div class="recap-label">
+              <span>🥤</span>
+              <span>Boissons</span>
+            </div>
+            <div id="recap-drinks" class="recap-value">—</div>
+          </div>
+
+          <div class="recap-row">
+            <div class="recap-label">
               <span>✨</span>
-              <span>Petits extras</span>
+              <span>Activités & Ambiance</span>
             </div>
             <div id="recap-extras" class="recap-value">—</div>
           </div>
@@ -935,7 +1287,7 @@
           <div class="recap-row">
             <div class="recap-label">
               <span>📅</span>
-              <span>Date & Moment</span>
+              <span>Date & Heure</span>
             </div>
             <div id="recap-datetime" class="recap-value">—</div>
           </div>
@@ -943,7 +1295,7 @@
           <div class="recap-row">
             <div class="recap-label">
               <span>💬</span>
-              <span>Ton mot</span>
+              <span>Ton mot doux</span>
             </div>
             <div id="recap-message" class="recap-value">—</div>
           </div>
@@ -951,7 +1303,7 @@
 
         <!-- Citation romantique -->
         <div class="romantic-quote" style="margin-bottom: 24px;">
-          « Le plus important, ce n'est pas vraiment l'endroit ni ce qu'on va manger… C'est surtout de passer un joli moment avec toi. ❤️ »
+          « Ce rendez-vous est mon invitation. Toi, viens simplement avec ton sourire. ❤️ »
         </div>
 
         <!-- Bouton WhatsApp -->

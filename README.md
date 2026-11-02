@@ -1,118 +1,97 @@
-# 💌 Invitation Romantique Interactive Premium — Rendez-vous
+# 🇨🇲❤️ Invitation Romantique Interactive — Édition Cameroun 🇨🇲
 
-Un site web moderne, élégant, interactif et responsive conçu pour inviter une personne spéciale à un rendez-vous inoubliable avec humour, charme, complicité et raffinement.
+Un site web moderne, élégant, interactif et responsive conçu pour inviter une fille rencontrée à la faculté à un rendez-vous mémorable avec tout le charme, l'humour, la complicité et la chaleur de l'hospitalité camerounaise !
 
-Inspiré du niveau de finition et de qualité UI/UX de référence (design épuré, typographie soignée, micro-animations, glassmorphism et intégration WhatsApp native).
-
----
-
-## ✨ Parcours Complet & Nouvelles Fonctionnalités Premium
-
-1. **Étape 1 — Son prénom 💌 :**
-   - Accueil raffiné avec texte doux : *« Une petite question pour toi… »*
-   - Champ de saisie élégant *« Comment tu t'appelles ? »*
-   - Mémorisation dynamique et personnalisation automatique de l'ensemble des pages avec son prénom.
-
-2. **Étape 1-B — Message secret personnalisé dans l'enveloppe 💌 :**
-   - Une belle enveloppe interactive avec sceau de cire rubis.
-   - Dès qu'elle clique, le sceau s'ouvre et révèle le mot secret :
-     *« Je ne sais pas encore comment cette histoire va commencer, mais je sais que j'aimerais bien découvrir un peu plus la personne qui se cache derrière ce joli prénom. ❤️ »*
-   - Bouton d'accès fluide vers la grande question.
-
-3. **Étape 2 — La question centrale ❤️ :**
-   - Question : *« [Son prénom], veux-tu sortir avec moi ? ❤️ »*
-   - Bouton **« Oui, avec plaisir ❤️ »** : Grand, lumineux, animé et irrésistible.
-   - Bouton **« Non 🙈 » fugitif** : Dès qu'elle tente de le survoler (ordinateur) ou de le toucher (smartphone), le bouton s'enfuit malicieusement et affiche de petits messages taquins (*« Oups, le bouton a glissé ! 🙈 »*, *« Erreur 404 : Le 'Non' est introuvable ❤️ »*, *« Bien tenté, mais dis oui… 🥺 »*).
-   - Au clic sur le **Oui** : explosion de confettis et cœurs animés (`canvas-confetti`), mélodie de joie et message de triomphe : *« Je savais que tu allais dire oui ! 😌❤️ »*.
-
-4. **Étape 2-B — Mini-jeu : Test de compatibilité complice 😏 :**
-   - 5 questions rapides et amusantes pour rire ensemble :
-     1. Soirée romantique 🕯️ vs Aventure improvisée 🚗
-     2. Plutôt sucré 🍰 vs Plutôt salé 🍕
-     3. Parler des heures 🗣️ vs Silence complice 🤫
-     4. Les surprises 🎁 vs Tout planifier 📋
-     5. Plage & coucher de soleil 🏖️ vs Montagne & chalet cosy 🏔️
-   - Affichage d'un résultat 100% positif et humoristique : *« Compatibilité : 99.8% ! (selon un algorithme très objectif et pas du tout amoureux) 😂❤️ »*.
-   - Option « Passer cette étape » disponible à tout moment.
-
-5. **Étape 3 — Choix du lieu 📍 :**
-   - 8 cartes visuelles avec photos HD, badges d'ambiance et descriptions amusantes & romantiques :
-     - 🌳 **Un joli parc** (*« Un endroit tranquille pour parler, rire et apprendre à mieux se connaître. »*)
-     - 🍽️ **Un restaurant chic** (*« Un restaurant chic, parce que tu mérites le meilleur. »*)
-     - 🏊 **Une piscine** (*« Une piscine, du soleil et une bonne compagnie. »*)
-     - ☕ **Un café élégant** (*« Café chaud, douceurs et regards complices. »*)
-     - 🌇 **Un rooftop vue magique** (*« Les lumières de la ville et une vue magique sous les étoiles. »*)
-     - 🎬 **Un cinéma** (*« Popcorn partagé et ambiance feutrée dans les fauteuils moelleux. »*)
-     - 🌅 **Balade au coucher de soleil** (*« Des couleurs dorées et une atmosphère magique rien qu'à nous. »*)
-     - ✨ **Un autre endroit** (avec champ de texte personnalisé automatique).
-
-6. **Étape 4 — Choix de la nourriture 🍴 :**
-   - Petite note d'humour : *« Attention, ton choix peut influencer mon humeur pendant les 5 prochaines minutes. 😂 »*
-   - Sélection multiple parmi : Sushi, Pâtes italiennes, Pizza artisanale, Burger gourmet, Grillades, Poulet bien assaisonné, Gâteau & Desserts, Chocolat fondant, Une autre idée.
-   - Champ libre facultatif : *« Tu as une autre envie ? Dis-moi tout… »*.
-
-7. **Étape 4-B — La Boîte à Surprises 🎁 :**
-   - 3 boîtes cadeaux mystérieuses interactives :
-     - 🎁 **Boîte Rose Poudré :** *« Une glace offerte pendant notre rendez-vous. 🍦 »*
-     - 🎁 **Boîte Dorée :** *« Le droit de choisir notre prochaine destination. 🌍 »*
-     - 🎁 **Boîte Rouge Rubis :** *« Une surprise que je préfère te révéler en personne. 🤫❤️ »*
-
-8. **Étape 5 — Les petits plus & la date ✨ :**
-   - Extras romantiques : Surprise, Playlist, Coucher de soleil, Photos, Glace, Cadeau, Discussion.
-   - Moment préféré : *Après-midi* ☀️, *Au coucher du soleil* 🌅, *Soirée* 🌙.
-   - Sélecteur de date avec calendrier (date du jour minimum).
-   - Phrase rassurante : *« Promis, je ferai de mon mieux pour que tu passes un bon moment. ❤️ »*.
-
-9. **Étape 5-B — Petit espace de confidences 💬 (Facultatif) :**
-   - 5 questions légères pour briser la glace (chose qui fait sourire, petit plaisir, endroit rêvé, rendez-vous idéal, petite attention).
-   - 100% facultatif avec bouton « Passer cette étape ».
-
-10. **Étape 5-C — Une lettre romantique finale 💖 :**
-    - Parchemin élégant avec texte poétique :
-      *« Tu sais, je ne cherche pas à organiser le rendez-vous le plus parfait du monde. Je veux simplement partager un joli moment avec toi, apprendre à te connaître davantage, rire, discuter et créer peut-être un beau souvenir. Et si cette petite aventure commençait maintenant ? ❤️ »*
-
-11. **Étape 6 — Récapitulatif Final & Envoi WhatsApp 💌 :**
-    - Présentation luxueuse type billet d'invitation officiel VIP.
-    - Récapitulatif clair de l'ensemble de ses choix (lieu, nourriture, extras, date, confidences et surprises débloquées).
-    - Bouton principal : **« Envoyer mon invitation 💌 »** ouvrant directement WhatsApp avec le message prérempli.
-    - Bouton **« 🎁 Revoir mes surprises débloquées »** pour afficher la modale de ses cadeaux.
-    - Bouton de secours **« Copier le texte du message 📋 »**.
+Inspiré du niveau d'exigence visuelle et d'animation de [Bailleur Pro](https://bailleurpro-eight.vercel.app/), avec une ambiance romantique chic, rose poudré, crème et accents dorés et camerounais.
 
 ---
 
-## 🎵 Ambiance Musicale & ❤️ Dose de Compliments
+## ✨ Parcours Complet & Fonctionnalités 100% Camerounaises
 
-- **🎵 Lecteur musical discret :**
-  - Situé dans la barre supérieure.
-  - Musique romantique douce et apaisante (synthèse Web Audio lo-fi piano / carillon relaxant).
-  - Contrôle du volume intégré.
-  - **Désactivée par défaut** (ne démarre jamais automatiquement, démarre uniquement au clic de l'utilisateur).
+### 1. Étape 1 — Son prénom 💌
+- Accueil doux : *« Une petite question pour toi, ma star… ❤️ »*
+- Champ de saisie élégant : *« Comment tu t'appelles ? »*
+- Personnalisation automatique de toutes les étapes suivantes avec son prénom.
 
-- **💌 Dose de compliments (22 compliments exclusifs) :**
-  - Bouton permanent en haut de page.
-  - Modale interactive avec compteur : affiche un compliment doux, drôle et valorisant à chaque clic.
-  - Personnalisé automatiquement avec son prénom.
+### 2. Étape 1-B — Message secret personnalisé dans l'enveloppe 💌
+- Enveloppe interactive avec cachet de cire rouge rubis.
+- Dès qu'elle clique, l'enveloppe s'ouvre avec confettis et révèle le mot :
+  *« Je ne sais pas encore comment cette histoire va commencer, mais je sais que j'aimerais bien découvrir un peu plus la personne qui se cache derrière ce joli prénom. ❤️ »*
+
+### 3. Étape 2 — La grande question ❤️ (Bouton « Non » fugitif)
+- Question : *« [Son prénom], veux-tu sortir avec moi ? ❤️ »*
+- Bouton **« Oui, avec plaisir ❤️ »** : Grand, animé, pulse doucement.
+- Bouton **« Non 🙈 » fugitif** : Il esquive le curseur ou le doigt de manière ludique avec des messages taquins du Mboa (*« Le ndolé n'attend pas, dis oui ! 😋 »*, *« Ce bouton fuit plus vite qu'un bend-skin à l'heure de pointe ! 🏍️💨 »*, *« Erreur 404 : Le 'Non' est introuvable au Cameroun ❤️ »*).
+- Célébration au « Oui » : confettis, fanfare Web Audio et message : *« Je savais que tu allais dire oui ! 😌❤️ »*.
+
+### 4. Étape 2-B — Mini-jeu : Test de compatibilité complice 😏
+- 5 questions légères (Soirée romantique vs aventure, Sucré vs salé, Parler des heures vs silence complice, Surprises vs planifier, Plage vs montagne).
+- Résultat complice : *« Compatibilité : 99.8% ! 😂❤️ »*. (Skippable à tout moment).
+
+### 5. Étape 3 — Destination & Spots 🇨🇲
+Deux modes au choix :
+- **🪄 Mode « Organise notre date 🇨🇲 » :**
+  - Générateur automatique intelligent selon la Ville, le Style de sortie, l'Ambiance et le Moment.
+  - Propose un pack complet : Lieu suggéré, Plat, Boisson, Activité complice, Petite attention et Message doux.
+  - Boutons *« 🔄 Générer une autre idée »* et *« 💌 Ajouter ce programme »*.
+- **📍 Mode Choix par Ville :**
+  - 10 villes camerounaises : Yaoundé, Douala, Kribi, Limbe, Bafoussam, Buea, Bamenda, Dschang, Garoua, Maroua + Autre ville.
+  - Cartes illustrées des plus beaux spots (Bois Sainte Anastasie, Mont Fébé, Bonanjo, Bonapriso, Plage de Kribi, Chutes de la Lobé, etc.).
+  - Option *« Je choisis mon propre endroit »*.
+
+### 6. Étape 4 — Le Menu & Boissons du pays 🍴🥤
+- **Onglet Nos Saveurs du Cameroun 🇨🇲 :** 16 plats emblématiques (Ndolé miondo/plantain, Poulet DG, Poisson braisé, Soya, Eru, Koki, Achu sauce jaune, Taro sauce jaune, Kondré, Mbongo tchobi, Okok, Poulet rôti, Porc braisé, Plantain & haricots, Riz sauté).
+- **Onglet Cuisine Internationale 🌍 :** Pizza, Spaghetti, Sushi, Burger, Grillades, Desserts.
+- **Bouton Surprise :** *« 🎲 Surprise, choisis pour moi ! »*.
+- **Boissons camerounaises 🥤 :** Foléré glacé, Jus de gingembre, Jus de baobab, Jus d'ananas naturel, Jus de bissap, Cocktail sans alcool, Eau Supermont, Autre boisson.
+
+### 7. Étape 4-B — La Boîte à Surprise Unique 🎁
+- **Une seule boîte cadeau luxueuse au centre de l'écran** avec ruban doré et nœud 🎀.
+- Texte : *« J'ai quelque chose de spécial pour toi… ❤️ »*
+- Bouton : *« Ouvrir ma surprise 🎁 »*.
+- Animation d'ouverture du couvercle, pluie de cœurs et révélation :
+  *« Surprise ! ❤️ [Prénom], je voulais simplement te rappeler que tu mérites de beaux moments, de beaux sourires et beaucoup d'attention. Et si on commençait par un joli rendez-vous ensemble ? »*
+  + Badge douceur : *« 🍦 Une glace ou douceur offerte pendant notre rendez-vous ! »*.
+
+### 8. Étape 5 — Ambiance, Date & Heure ✨ (100% Offert)
+- 10 activités romantiques camerounaises (Dégustation de poisson braisé, Balade à la plage, Coucher de soleil, Cinéma cosy, etc.).
+- **Bannière d'invitation offerte :**
+  *« Ce rendez-vous est mon invitation. Toi, viens simplement avec ton sourire. ❤️ »*
+- Aucun budget, aucun montant ni paiement demandé.
+- Sélecteur de moment (Après-midi, Coucher de soleil, Soirée).
+- Sélecteur de date (calendrier dès aujourd'hui) et d'heure (ex: 18:30).
+
+### 9. Étape 5-B & 5-C — Confidences & Lettre finale 💖
+- Questions douces facultatives pour apprendre à se connaître.
+- Parchemin romantique avec mot doux sincère.
+
+### 10. Étape 6 — Récapitulatif Final & Envoi WhatsApp 💌
+- Ticket officiel récapitulant tout : Nom, Ville, Lieu, Menu, Boisson, Activités, Date, Heure et Mot doux.
+- Citation élégante : *« Ce rendez-vous est mon invitation. Toi, viens simplement avec ton sourire. ❤️ »*.
+- Bouton WhatsApp configuré sur le numéro **655752004** (`237655752004`).
+- Bouton de copie dans le presse-papier.
 
 ---
 
-## ⚙️ Configuration de votre numéro WhatsApp
+## 🎵 Lecteur Musical & 💌 22 Compliments
 
-### Méthode 1 : Dans le fichier `config.js`
-Ouvrez le fichier `config.js` et indiquez votre numéro international sans espace ni '+' :
-```javascript
-const APP_CONFIG = {
-  whatsappNumber: "237655752004", // Votre numéro WhatsApp (+237 6 55 75 20 04)
-  ...
-};
-```
-
-### Méthode 2 : Directement depuis le site
-Cliquez sur la petite roue dentée ⚙️ située en haut à droite de la page pour saisir et enregistrer votre numéro directement dans le navigateur.
+- **🎵 Lecteur lo-fi piano romantique :** Dans la barre supérieure, **désactivé par défaut**, doux et relaxant.
+- **💌 Modale 22 compliments :** Découverte aléatoire ou séquentielle d'un compliment valorisant et complice à chaque clic.
 
 ---
 
-## 🚀 Lancement & Déploiement
+## ⚙️ Configuration WhatsApp
 
-- **En local :** Double-cliquez sur `index.html` pour ouvrir le site dans n'importe quel navigateur web.
-- **En ligne (gratuit en 1 min) :**
-  - Glissez-déposez le dossier sur **[Vercel](https://vercel.com)** ou **[Netlify Drop](https://app.netlify.com/drop)**.
+Le numéro WhatsApp de réception est déjà préconfiguré sur :
+**`237655752004`** (Numéro camerounais `655752004`).
+
+Vous pouvez également le vérifier ou le modifier :
+1. Dans `config.js` (`whatsappNumber: "237655752004"`).
+2. Directement depuis le site en cliquant sur la roue ⚙️ en haut à droite.
+
+---
+
+## 🚀 Utilisation locale & Déploiement
+
+- **En local :** Ouvrez simplement `index.html` dans Chrome, Edge ou Safari.
+- **En ligne (gratuit en 1 clic) :** Déposez le dossier sur [Vercel](https://vercel.com) ou [Netlify Drop](https://app.netlify.com/drop).

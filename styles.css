@@ -1,6 +1,6 @@
-/* ==========================================================================
-   STYLE ÉLÉGANT & ROMANTIQUE — INVITATION RENDEZ-VOUS
-   Inspiré de l'excellence UI/UX moderne, chic, raffiné et séduisant
+﻿/* ==========================================================================
+   STYLE Ã‰LÃ‰GANT & ROMANTIQUE â€” INVITATION RENDEZ-VOUS
+   InspirÃ© de l'excellence UI/UX moderne, chic, raffinÃ© et sÃ©duisant
    ========================================================================== */
 
 :root {
@@ -326,7 +326,7 @@ body {
 }
 
 /* ==========================================================================
-   ÉTAPE 1 : PREMIER CONTACT & PRÉNOM
+   Ã‰TAPE 1 : PREMIER CONTACT & PRÃ‰NOM
    ========================================================================== */
 .hero-envelope {
   width: 90px;
@@ -433,7 +433,7 @@ input[type="date"].custom-input {
 }
 
 /* ==========================================================================
-   ÉTAPE 2 : LA QUESTION CRUCIALE + BOUTON FUGITIF "NON"
+   Ã‰TAPE 2 : LA QUESTION CRUCIALE + BOUTON FUGITIF "NON"
    ========================================================================== */
 .question-avatar-wrap {
   position: relative;
@@ -621,7 +621,7 @@ input[type="date"].custom-input {
 }
 
 /* ==========================================================================
-   ÉTAPES 3 & 4 : GRILLES DE CARTES (LIEUX & NOURRITURE)
+   Ã‰TAPES 3 & 4 : GRILLES DE CARTES (LIEUX & NOURRITURE)
    ========================================================================== */
 .selection-grid {
   display: grid;
@@ -771,7 +771,7 @@ input[type="date"].custom-input {
 }
 
 /* ==========================================================================
-   ÉTAPE 5 : LES PETITS PLUS & DÉTAILS
+   Ã‰TAPE 5 : LES PETITS PLUS & DÃ‰TAILS
    ========================================================================== */
 .extras-list {
   display: flex;
@@ -875,7 +875,7 @@ input[type="date"].custom-input {
 }
 
 /* ==========================================================================
-   ÉTAPE 6 : RÉCAPITULATIF FINAL & DISPATCH WHATSAPP
+   Ã‰TAPE 6 : RÃ‰CAPITULATIF FINAL & DISPATCH WHATSAPP
    ========================================================================== */
 .recap-card {
   background: #FFFFFF;
@@ -979,7 +979,7 @@ input[type="date"].custom-input {
   border-color: #CBD5E1;
 }
 
-/* Navigation buttons (Précédent / Continuer) */
+/* Navigation buttons (PrÃ©cÃ©dent / Continuer) */
 .wizard-nav {
   display: flex;
   align-items: center;
@@ -1008,7 +1008,7 @@ input[type="date"].custom-input {
   border-color: #CBD5E1;
 }
 
-/* Modale de réglage secret / direct pour le numéro WhatsApp */
+/* Modale de rÃ©glage secret / direct pour le numÃ©ro WhatsApp */
 .config-modal-overlay {
   position: fixed;
   top: 0;
@@ -1143,7 +1143,7 @@ input[type="date"].custom-input {
 }
 
 /* ==========================================================================
-   NOUVELLES FONCTIONNALITÉS PREMIUM — EXPÉRIENCE ROMANTIQUE ENRICHIE
+   NOUVELLES FONCTIONNALITÃ‰S PREMIUM â€” EXPÃ‰RIENCE ROMANTIQUE ENRICHIE
    ========================================================================== */
 
 /* --- 1. Enveloppe interactive du Message Secret --- */
@@ -1315,7 +1315,7 @@ input[type="date"].custom-input {
   letter-spacing: 0.5px;
 }
 
-/* --- 3. Mini-Jeu : Test de Compatibilité --- */
+/* --- 3. Mini-Jeu : Test de CompatibilitÃ© --- */
 .quiz-container {
   display: flex;
   flex-direction: column;
@@ -1402,7 +1402,7 @@ input[type="date"].custom-input {
   margin: 6px 0;
 }
 
-/* --- 4. La Boîte à Surprises (3 Boîtes Mystérieuses) --- */
+/* --- 4. La BoÃ®te Ã  Surprises (3 BoÃ®tes MystÃ©rieuses) --- */
 .gift-boxes-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1560,7 +1560,7 @@ input[type="date"].custom-input {
 }
 
 .romantic-parchment-letter::before {
-  content: '🌹';
+  content: 'ðŸŒ¹';
   position: absolute;
   top: -18px;
   left: 50%;
@@ -1586,7 +1586,7 @@ input[type="date"].custom-input {
   margin-top: 16px;
 }
 
-/* Responsive pour les nouvelles boîtes et quiz */
+/* Responsive pour les nouvelles boÃ®tes et quiz */
 @media (max-width: 640px) {
   .gift-boxes-grid {
     grid-template-columns: 1fr;
@@ -1605,5 +1605,666 @@ input[type="date"].custom-input {
   .compliments-pill-btn {
     padding: 5px 10px;
     font-size: 0.75rem;
+  }
+}
+
+/* ==========================================================================
+   STYLE SPÃ‰CIAL Ã‰DITION CAMEROUNAISE ðŸ‡¨ðŸ‡² (ROMANTIQUE, CHIC & LOCAL)
+   ========================================================================== */
+
+/* Touche subtile drapeau Cameroun (Vert, Rouge, Jaune) */
+.cm-tricolor-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+.cm-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.cm-dot.green { background-color: #007A5E; }
+.cm-dot.red { background-color: #CE1126; position: relative; }
+.cm-dot.yellow { background-color: #FCD116; }
+
+/* SÃ©lecteur de villes camerounaises */
+.city-selector-section {
+  margin-bottom: 22px;
+}
+
+.city-pills-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 6px 2px 12px 2px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.city-pills-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.city-pills-scroll::-webkit-scrollbar-thumb {
+  background: var(--rose-subtle);
+  border-radius: 4px;
+}
+
+.city-pill {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: #FFFFFF;
+  border: 1.5px solid #F1E5E9;
+  border-radius: var(--radius-pill);
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.22s ease;
+  user-select: none;
+}
+
+.city-pill:hover {
+  border-color: var(--rose-primary);
+  transform: translateY(-2px);
+}
+
+.city-pill.active {
+  background: linear-gradient(135deg, #FFF1F2 0%, #FFE4E6 100%);
+  border-color: var(--rose-primary);
+  color: var(--rose-deep);
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.18);
+}
+
+/* Onglets CatÃ©gories Cuisine */
+.food-tabs-container {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+  background: #FDF2F4;
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  border: 1px solid #FECDD3;
+}
+
+.food-tab-btn {
+  flex: 1;
+  padding: 10px 14px;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-pill);
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.food-tab-btn.active {
+  background: #FFFFFF;
+  color: var(--rose-deep);
+  box-shadow: 0 2px 8px rgba(225, 29, 72, 0.15);
+}
+
+/* Bouton Surprise Menu */
+.btn-surprise-menu {
+  width: 100%;
+  padding: 11px 18px;
+  margin-bottom: 18px;
+  background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+  border: 1.5px dashed #D97706;
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #92400E;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-surprise-menu:hover {
+  transform: translateY(-2px);
+  background: #FDE68A;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Grille des boissons camerounaises */
+.drinks-section {
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1.5px dashed #F1E5E9;
+}
+
+.drinks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.drink-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background: #FFFFFF;
+  border: 1.5px solid #F1E5E9;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.22s ease;
+  user-select: none;
+}
+
+.drink-card:hover {
+  border-color: var(--rose-primary);
+  transform: translateY(-2px);
+}
+
+.drink-card.selected {
+  background: #FFF5F7;
+  border-color: var(--rose-primary);
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.12);
+}
+
+.drink-card-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.drink-icon {
+  font-size: 1.35rem;
+}
+
+.drink-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.drink-check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid #CBD5E1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: transparent;
+  transition: all 0.2s ease;
+}
+
+.drink-card.selected .drink-check {
+  background: var(--rose-primary);
+  border-color: var(--rose-primary);
+  color: #FFFFFF;
+}
+
+/* BanniÃ¨re d'invitation 100% offerte avec dÃ©licatesse */
+.invitation-complimentary-banner {
+  background: linear-gradient(135deg, #FFF7F8 0%, #FFFDF9 100%);
+  border: 1.5px solid #FDE68A;
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  margin: 22px 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 4px 16px rgba(225, 29, 72, 0.08);
+}
+
+.invitation-banner-icon {
+  font-size: 1.9rem;
+  flex-shrink: 0;
+}
+
+.invitation-banner-text {
+  font-family: var(--font-cursive);
+  font-size: 1.35rem;
+  color: var(--rose-velvet);
+  line-height: 1.35;
+  margin: 0;
+  font-weight: 700;
+}
+
+/* Heure du rendez-vous */
+.time-picker-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .drinks-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .food-tabs-container {
+    flex-direction: column;
+    border-radius: var(--radius-md);
+  }
+
+  .time-picker-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   STYLE : BOÃŽTE UNIQUE & GÃ‰NÃ‰RATEUR AUTOMATIQUE Â« ORGANISE NOTRE DATE ðŸ‡¨ðŸ‡² Â»
+   ========================================================================== */
+
+/* --- BoÃ®te Ã  Surprise Unique --- */
+.single-surprise-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto 30px auto;
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+}
+
+.luxury-single-gift {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 10px auto 26px auto;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  perspective: 800px;
+}
+
+.luxury-single-gift:hover {
+  transform: translateY(-8px) scale(1.05);
+}
+
+.gift-base {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 140px;
+  background: linear-gradient(135deg, #BE123C 0%, #881337 100%);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 18px 40px rgba(136, 19, 55, 0.4);
+  border: 2px solid #FDA4AF;
+  overflow: hidden;
+}
+
+.gift-base::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 100%;
+  background: linear-gradient(90deg, #F59E0B, #FDE68A, #D97706);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+
+.gift-lid {
+  position: absolute;
+  top: 15px;
+  left: -8px;
+  width: 196px;
+  height: 48px;
+  background: linear-gradient(135deg, #E11D48 0%, #BE123C 100%);
+  border-radius: 12px;
+  border: 2px solid #FDA4AF;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gift-lid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 100%;
+  background: linear-gradient(90deg, #F59E0B, #FDE68A, #D97706);
+}
+
+.gift-ribbon-bow {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.8rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  animation: pulseBeat 2s infinite ease-in-out;
+}
+
+/* Ã‰tat BoÃ®te Ouverte */
+.luxury-single-gift.opened .gift-lid {
+  transform: translateY(-75px) rotate(-14deg) scale(0.9);
+  opacity: 0.85;
+}
+
+.luxury-single-gift.opened {
+  cursor: default;
+}
+
+.surprise-revealed-card {
+  display: none;
+  background: #FFFDF9;
+  border: 2px solid #FDE68A;
+  border-radius: var(--radius-xl);
+  padding: 28px 22px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(190, 18, 60, 0.18);
+  animation: popScale 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  margin-top: 10px;
+  width: 100%;
+  position: relative;
+}
+
+.surprise-revealed-card.show {
+  display: block;
+}
+
+.surprise-revealed-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FEF3C7;
+  color: #B45309;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+  border: 1px solid #FDE68A;
+}
+
+.surprise-revealed-text {
+  font-family: var(--font-cursive);
+  font-size: 1.65rem;
+  color: var(--rose-velvet);
+  line-height: 1.45;
+  margin-bottom: 18px;
+}
+
+.surprise-extra-treat {
+  background: #FFF1F2;
+  border: 1.5px dashed var(--rose-primary);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--rose-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+/* --- GÃ©nÃ©rateur Â« Organise notre date ðŸ‡¨ðŸ‡² Â» --- */
+.mode-toggle-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  background: #FDF2F4;
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  border: 1px solid #FECDD3;
+}
+
+.mode-tab-btn {
+  flex: 1;
+  padding: 10px 14px;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.mode-tab-btn.active {
+  background: #FFFFFF;
+  color: var(--rose-deep);
+  box-shadow: 0 2px 8px rgba(225, 29, 72, 0.15);
+}
+
+.generator-controls-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.generator-select-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.generator-select-wrap label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.generator-select {
+  padding: 12px 14px;
+  border: 1.5px solid #E2E8F0;
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+  font-family: var(--font-sans);
+  background: #FFFFFF;
+  color: var(--text-dark);
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.generator-select:focus {
+  border-color: var(--rose-primary);
+  box-shadow: 0 0 0 3px var(--rose-subtle);
+}
+
+.btn-generate-action {
+  width: 100%;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #F43F5E 0%, #E11D48 100%);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-pill);
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(225, 29, 72, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  margin-bottom: 20px;
+}
+
+.btn-generate-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(225, 29, 72, 0.5);
+}
+
+/* Carte de RÃ©sultat de la Proposition */
+.date-proposal-card {
+  display: none;
+  background: #FFFFFF;
+  border: 2px solid #FDE68A;
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 22px;
+  animation: popScale 0.4s ease;
+  position: relative;
+}
+
+.date-proposal-card.show {
+  display: block;
+}
+
+.proposal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1.5px dashed #F1E5E9;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+}
+
+.proposal-badge {
+  background: #FEF3C7;
+  color: #B45309;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.proposal-city-tag {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--rose-deep);
+}
+
+.proposal-grid-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.proposal-row-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.proposal-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.proposal-info-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.proposal-info-value {
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.proposal-message-quote {
+  font-family: var(--font-cursive);
+  font-size: 1.35rem;
+  color: var(--rose-velvet);
+  background: #FFF7F8;
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  text-align: center;
+  line-height: 1.4;
+  margin: 14px 0 18px 0;
+  border-left: 3px solid var(--rose-primary);
+}
+
+.proposal-actions-row {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-regen {
+  flex: 1;
+  padding: 12px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: #F8FAFC;
+  border: 1.5px solid #E2E8F0;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn-regen:hover {
+  background: #FFFFFF;
+  color: var(--text-dark);
+  border-color: #CBD5E1;
+}
+
+.btn-apply-proposal {
+  flex: 1.4;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+}
+
+.btn-apply-proposal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.5);
+}
+
+@media (max-width: 640px) {
+  .generator-controls-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .proposal-actions-row {
+    flex-direction: column;
+    gap: 8px;
   }
 }
